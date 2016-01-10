@@ -1,0 +1,97 @@
+### Processing procs.tcl...
+The following procedures are defined for use in this workshop.
+They are NOT standard IC Compiler commands.
+CES_procs:
+ aa                   # always ask - Searches Synopsys help for both commands and variables
+ async_domain         # set false paths between 2 clocks in both directions
+ gen_reports          # Generates min/max timing, constraint and qor reports
+ gui                  # Start or stop the GUI
+ host_stats           # Display statistics of the current host (server)
+ measure_time         # Run a command while measuring the time it takes
+ report_placement_blockages # Display a summary of all placement blockages in the design
+ report_route_guides  # Display a summary of all route guides in the design
+ report_timer         # report the elapsed time of a named timer
+ reset_timer          # Resets a named timer
+ ring_it              # Creates a simple power ring around macros
+ view                 # Display output of any command in a separate Tk window.
+ vman                 # Display a man page using the GUI man reader or Tcl/TK.
+
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_min.db'
+dc_shell> gui_start
+design_vision> gui
+... or just 'gui'
+design_vision> gui_start
+design_vision> read_file -format verilog {/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v}
+Loading db file '/tools/synopsys/syn_vG-2012.06-SP5/libraries/syn/gtech.db'
+Loading db file '/tools/synopsys/syn_vG-2012.06-SP5/libraries/syn/standard.sldb'
+  Loading link library 'cb13fs120_tsmc_max'
+  Loading link library 'cb13io320_tsmc_max'
+  Loading link library 'cb13special_max'
+  Loading link library 'ram16x128_max'
+  Loading link library 'ram4x32_max'
+  Loading link library 'ram8x64_max'
+  Loading link library 'ram32x64_max'
+  Loading link library 'gtech'
+Loading verilog file '/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Performing 'read' command.
+Compiling source file /home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v
+Reading with netlist reader (equivalent to -netlist option).
+Verilog netlist reader completed successfully.
+Current design is now '/home/stu23/sorin/ic_project_lab/synthesis/iic_DW01_inc_0.db:iic_DW01_inc_0'
+Loaded 3 designs.
+Current design is 'iic_DW01_inc_0'.
+design_vision> 
+Current design is 'iic_DW01_inc_0'.
+design_vision> read_file -format verilog {/home/stu23/sorin/ic_project_lab/synthesis/iic_all_netlist.v}
+Loading verilog file '/home/stu23/sorin/ic_project_lab/synthesis/iic_all_netlist.v'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Warning: Overwriting design file '/home/stu23/sorin/ic_project_lab/synthesis/iic_DW01_inc_0'. (DDB-24)
+Warning: Overwriting design file '/home/stu23/sorin/ic_project_lab/synthesis/iic'. (DDB-24)
+Warning: Overwriting design file '/home/stu23/sorin/ic_project_lab/synthesis/iic_top'. (DDB-24)
+Performing 'read' command.
+Compiling source file /home/stu23/sorin/ic_project_lab/synthesis/iic_all_netlist.v
+Reading with netlist reader (equivalent to -netlist option).
+Verilog netlist reader completed successfully.
+Current design is now '/home/stu23/sorin/ic_project_lab/synthesis/iic_DW01_inc_0.db:iic_DW01_inc_0'
+Loaded 3 designs.
+Current design is 'iic_DW01_inc_0'.
+design_vision> 
+Current design is 'iic_DW01_inc_0'.
+design_vision> read_file -format verilog {/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v}
+Loading verilog file '/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Warning: Overwriting design file '/home/stu23/sorin/ic_project_lab/synthesis/iic_DW01_inc_0'. (DDB-24)
+Warning: Overwriting design file '/home/stu23/sorin/ic_project_lab/synthesis/iic'. (DDB-24)
+Warning: Overwriting design file '/home/stu23/sorin/ic_project_lab/synthesis/iic_top'. (DDB-24)
+Performing 'read' command.
+Compiling source file /home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v
+Reading with netlist reader (equivalent to -netlist option).
+Verilog netlist reader completed successfully.
+Current design is now '/home/stu23/sorin/ic_project_lab/synthesis/iic_DW01_inc_0.db:iic_DW01_inc_0'
+Loaded 3 designs.
+Current design is 'iic_DW01_inc_0'.
+design_vision> 
+Current design is 'iic_DW01_inc_0'.
+design_vision> current_design iic_top
+Current design is 'iic_top'.
+design_vision> 
+Loading db file '/tools/synopsys/syn_vG-2012.06-SP5/libraries/syn/generic.sdb'
+Current design is 'iic_top'.
+Current design is 'iic_top'.

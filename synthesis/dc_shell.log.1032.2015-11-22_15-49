@@ -1,0 +1,1041 @@
+### Processing procs.tcl...
+The following procedures are defined for use in this workshop.
+They are NOT standard IC Compiler commands.
+CES_procs:
+ aa                   # always ask - Searches Synopsys help for both commands and variables
+ async_domain         # set false paths between 2 clocks in both directions
+ gen_reports          # Generates min/max timing, constraint and qor reports
+ gui                  # Start or stop the GUI
+ host_stats           # Display statistics of the current host (server)
+ measure_time         # Run a command while measuring the time it takes
+ report_placement_blockages # Display a summary of all placement blockages in the design
+ report_route_guides  # Display a summary of all route guides in the design
+ report_timer         # report the elapsed time of a named timer
+ reset_timer          # Resets a named timer
+ ring_it              # Creates a simple power ring around macros
+ view                 # Display output of any command in a separate Tk window.
+ vman                 # Display a man page using the GUI man reader or Tcl/TK.
+
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_min.db'
+dc_shell> gui_start
+design_vision> source ./synthesis.tcl
+Running PRESTO HDLC
+Compiling source file ../rtl_new/iic.v
+Compiling source file ../rtl_new/iic_top.v
+Presto compilation completed successfully.
+Loading db file '/tools/synopsys/syn_vG-2012.06-SP5/libraries/syn/gtech.db'
+Loading db file '/tools/synopsys/syn_vG-2012.06-SP5/libraries/syn/standard.sldb'
+  Loading link library 'cb13fs120_tsmc_max'
+  Loading link library 'cb13io320_tsmc_max'
+  Loading link library 'cb13special_max'
+  Loading link library 'ram16x128_max'
+  Loading link library 'ram4x32_max'
+  Loading link library 'ram8x64_max'
+  Loading link library 'ram32x64_max'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred tri-state devices in process
+        in routine iic_top line 77 in file
+                '../rtl_new/iic_top.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+|  net_sda_tri  | Tri-State Buffer |   1   | N  |
+=================================================
+
+Inferred tri-state devices in process
+        in routine iic_top line 78 in file
+                '../rtl_new/iic_top.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+| net_sda_o_tri | Tri-State Buffer |   1   | N  |
+=================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'iic_top'.
+Information: Building the design 'iic'. (HDL-193)
+
+Statistics for case statements in always block at line 154 in file
+        '../rtl_new/iic.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           160            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 224 in file
+        '../rtl_new/iic.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           242            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 362 in file
+        '../rtl_new/iic.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           372            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 392 in file
+        '../rtl_new/iic.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           417            |    auto/auto     |
+|           487            |    auto/auto     |
+|           553            |    auto/auto     |
+|           772            |    auto/auto     |
+|           834            |    auto/auto     |
+|           894            |    auto/auto     |
+|           968            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine iic line 144 in file
+                '../rtl_new/iic.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    cnt_delay_reg    | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine iic line 154 in file
+                '../rtl_new/iic.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cnt_reg       | Flip-flop |   2   |  Y  | N  | N  | Y  | N  | N  | N  |
+|       cnt_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine iic line 194 in file
+                '../rtl_new/iic.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      scl_r_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine iic line 224 in file
+                '../rtl_new/iic.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   WRITE_DATA1_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   WRITE_DATA4_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   WRITE_DATA3_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   WRITE_DATA2_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    BYTE_ADDR_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     DEVICE_reg      | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  PAGEDATA_NUM_reg   | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   WRITE_DATA0_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine iic line 362 in file
+                '../rtl_new/iic.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   pagedata_r_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine iic line 392 in file
+                '../rtl_new/iic.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      db_r_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     ackflag_reg     | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    read_data_reg    | Flip-flop |   8   |  N  | N  | Y  | N  | N  | N  | N  |
+|       num_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      sda_r_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|  DEVICE_WRITE_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     cstate_reg      | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     cstate_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|    outdata_r_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     pagecnt_reg     | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    sda_link_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred tri-state devices in process
+        in routine iic line 1108 in file
+                '../rtl_new/iic.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+|    sda_tri    | Tri-State Buffer |   1   | N  |
+=================================================
+Presto compilation completed successfully.
+Current design is 'iic_top'.
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (2 designs)               /home/stu23/sorin/ic_project_lab/synthesis/iic_top.db, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+Current design is 'iic_top'.
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (2 designs)               /home/stu23/sorin/ic_project_lab/synthesis/iic_top.db, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | G-2012.06-DWBB_201206.4 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 15 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'iic'
+Information: The register 'cstate_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cstate_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cstate_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cstate_reg[15]' is a constant and will be removed. (OPT-1206)
+  Processing 'iic_top'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'iic_DW01_inc_0'
+  Processing 'iic_DW01_cmp6_0'
+  Processing 'iic_DW01_dec_0'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Warning: Cannot perform multibit optimization on 'cell' 'sda_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'scl_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'ackflag_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'ackflag_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'ackflag_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_7'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_6'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_5'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_4'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_3'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw4_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw3_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw2_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw1_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'addr_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'addr_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'addr_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_7'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_6'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_5'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_4'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_3'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'REG_WR_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'rst_n_pad'. (OPT-915)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:03  108240.2     31.95    3773.3   14799.0                          
+    0:00:03  108234.0     31.95    3803.6   14799.0                          
+    0:00:03  108234.0     31.95    3803.6   14799.0                          
+    0:00:04  108233.0     31.95    3803.6   14799.0                          
+    0:00:04  108233.0     31.95    3803.6   14799.0                          
+    0:00:04  108233.0     31.95    3803.6   14799.0                          
+    0:00:04  108233.0     31.95    3803.6   14799.0                          
+    0:00:04  108096.1     31.97    3804.4   14799.0                          
+    0:00:04  108107.4     31.97    3605.7   14799.0                          
+    0:00:04  108107.4     31.97    3605.7   14799.0                          
+    0:00:04  108107.4     31.97    3605.7   14799.0                          
+    0:00:04  108107.4     31.97    3605.7   14799.0                          
+    0:00:04  108107.4     31.97    3605.7   14799.0                          
+    0:00:04  108109.4     31.96    3605.6   14689.6                          
+    0:00:04  108109.4     31.96    3605.6   14689.6                          
+    0:00:04  108109.4     31.96    3605.6   14689.6                          
+    0:00:04  108109.4     31.96    3605.6   14689.6                          
+    0:00:04  108109.4     31.96    3605.6   14689.6                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04  108109.4     31.96    3605.6   14689.6                          
+    0:00:04  108110.6     31.94    3605.4   14689.6                          
+    0:00:05  108098.1     31.94    5916.0   14689.6                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:05  108098.1     31.94    5916.0   14689.6                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:05  108098.1     31.94    5916.0   14689.6                          
+    0:00:05  108098.1     31.94    5916.0   14689.6                          
+    0:00:05  108098.1     31.94    5916.0   14689.6                          
+    0:00:05  108088.1     32.78    5916.8   14689.6                          
+    0:00:05  108086.9     32.78    5916.8   14689.6                          
+    0:00:05  108086.9     32.78    5916.8   14689.6                          
+    0:00:05  108086.9     32.78    5916.8   14689.6                          
+    0:00:05  108086.9     32.78    5916.8   14689.6                          
+    0:00:05  108086.9     32.78    5916.8   14689.6                          
+    0:00:05  108086.9     32.78    5916.8   14689.6                          
+    0:00:05  108086.9     32.78    5916.8   14689.6                          
+    0:00:05  108085.6     32.80    5917.0   14689.6                          
+    0:00:05  108085.6     32.80    5917.0   14689.6                          
+    0:00:05  108085.6     32.80    5917.0   14689.6                          
+    0:00:05  108085.6     32.80    5917.0   14689.6                          
+    0:00:05  108085.6     32.80    5917.0   14689.6                          
+    0:00:05  108085.6     32.80    5917.0   14689.6                          
+    0:00:05  108085.6     32.80    5917.0   14689.6                          
+    0:00:05  108090.6     31.98    5916.0   14689.6                          
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db'
+
+  Optimization Complete
+  ---------------------
+Writing verilog file '/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v'.
+1
+Current design is 'iic_top'.
+design_vision> 
+Loading db file '/tools/synopsys/syn_vG-2012.06-SP5/libraries/syn/generic.sdb'
+design_vision> source ./synthesis.tcl
+Running PRESTO HDLC
+Compiling source file ../rtl_new/iic_all.v
+Presto compilation completed successfully.
+Running PRESTO HDLC
+
+Inferred tri-state devices in process
+        in routine iic_top line 1197 in file
+                '../rtl_new/iic_all.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+|  net_sda_tri  | Tri-State Buffer |   1   | N  |
+=================================================
+
+Inferred tri-state devices in process
+        in routine iic_top line 1198 in file
+                '../rtl_new/iic_all.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+| net_sda_o_tri | Tri-State Buffer |   1   | N  |
+=================================================
+Presto compilation completed successfully.
+Warning: Overwriting design file '/home/stu23/sorin/ic_project_lab/synthesis/iic_top.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'iic_top'.
+Current design is 'iic_top'.
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               /home/stu23/sorin/ic_project_lab/synthesis/iic_top.db, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+Current design is 'iic_top'.
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               /home/stu23/sorin/ic_project_lab/synthesis/iic_top.db, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+
+Information: There are 2 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'iic_DW01_inc_0'
+  Processing 'iic'
+  Processing 'iic_top'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Warning: Cannot perform multibit optimization on 'cell' 'sda_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'scl_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'ackflag_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'ackflag_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'ackflag_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_7'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_6'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_5'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_4'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_3'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw4_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw3_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw2_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw1_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'addr_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'addr_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'addr_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_7'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_6'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_5'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_4'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_3'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'REG_WR_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'rst_n_pad'. (OPT-915)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01  108224.0     31.97    3608.1   14799.0                          
+    0:00:01  108224.0     31.97    3608.1   14799.0                          
+    0:00:01  108224.0     31.97    3608.1   14799.0                          
+    0:00:02  108224.0     31.97    3608.1   14799.0                          
+    0:00:02  108224.0     31.97    3608.1   14799.0                          
+    0:00:02  108224.0     31.97    3608.1   14799.0                          
+    0:00:02  108156.2     31.99    3609.9   14799.0                          
+    0:00:02  108119.2     31.99    3608.0   14799.0                          
+    0:00:02  108119.2     31.99    3608.0   14799.0                          
+    0:00:02  108119.2     31.99    3608.0   14799.0                          
+    0:00:02  108119.2     31.99    3608.0   14799.0                          
+    0:00:02  108119.2     31.99    3608.0   14799.0                          
+    0:00:02  108119.2     31.99    3608.0   14799.0                          
+    0:00:02  108119.2     31.99    3608.0   14799.0                          
+    0:00:02  108119.2     31.99    3608.0   14799.0                          
+    0:00:02  108119.2     31.99    3608.0   14799.0                          
+    0:00:02  108119.2     31.99    3608.0   14799.0                          
+    0:00:02  108120.4     31.98    3607.9   14689.6                          
+    0:00:02  108120.4     31.98    3607.9   14689.6                          
+    0:00:02  108120.4     31.98    3607.9   14689.6                          
+    0:00:02  108120.4     31.98    3607.9   14689.6                          
+    0:00:02  108120.4     31.98    3607.9   14689.6                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:02  108120.4     31.98    3607.9   14689.6                          
+    0:00:02  108121.7     31.97    3607.7   14689.6                          
+    0:00:03  108109.7     31.97    5919.7   14689.6                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:03  108109.7     31.97    5919.7   14689.6                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:03  108109.7     31.97    5919.7   14689.6                          
+    0:00:03  108109.7     31.97    5919.7   14689.6                          
+    0:00:03  108109.7     31.97    5919.7   14689.6                          
+    0:00:03  108097.4     32.80    5920.6   14689.6                          
+    0:00:03  108094.5     32.80    5919.7   14689.6                          
+    0:00:03  108094.5     32.80    5919.7   14689.6                          
+    0:00:03  108094.5     32.80    5919.7   14689.6                          
+    0:00:03  108094.5     32.80    5919.7   14689.6                          
+    0:00:03  108094.5     32.80    5919.7   14689.6                          
+    0:00:03  108094.5     32.80    5919.7   14689.6                          
+    0:00:03  108094.5     32.80    5919.7   14689.6                          
+    0:00:03  108093.2     32.82    5919.8   14689.6                          
+    0:00:03  108093.2     32.82    5919.8   14689.6                          
+    0:00:03  108093.2     32.82    5919.8   14689.6                          
+    0:00:03  108093.2     32.82    5919.8   14689.6                          
+    0:00:03  108093.2     32.82    5919.8   14689.6                          
+    0:00:03  108093.2     32.82    5919.8   14689.6                          
+    0:00:03  108093.2     32.82    5919.8   14689.6                          
+    0:00:03  108098.2     32.01    5918.9   14689.6                          
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db'
+
+  Optimization Complete
+  ---------------------
+Writing verilog file '/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v'.
+1
+Current design is 'iic_top'.
+design_vision> write -hierarchy -format verilog -output /home/stu23/sorin/ic_project_lab/synthesis/iic_all_netlist.v
+Writing verilog file '/home/stu23/sorin/ic_project_lab/synthesis/iic_all_netlist.v'.
+design_vision> source ./synthesis.tcl
+Running PRESTO HDLC
+Compiling source file ../rtl_new/iic_all.v
+Presto compilation completed successfully.
+Running PRESTO HDLC
+
+Inferred tri-state devices in process
+        in routine iic_top line 1197 in file
+                '../rtl_new/iic_all.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+|  net_sda_tri  | Tri-State Buffer |   1   | N  |
+=================================================
+
+Inferred tri-state devices in process
+        in routine iic_top line 1198 in file
+                '../rtl_new/iic_all.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+| net_sda_o_tri | Tri-State Buffer |   1   | N  |
+=================================================
+Presto compilation completed successfully.
+Warning: Overwriting design file '/home/stu23/sorin/ic_project_lab/synthesis/iic_top.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'iic_top'.
+Current design is 'iic_top'.
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               /home/stu23/sorin/ic_project_lab/synthesis/iic_top.db, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+Current design is 'iic_top'.
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               /home/stu23/sorin/ic_project_lab/synthesis/iic_top.db, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+
+Information: There are 2 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'iic_DW01_inc_0'
+  Processing 'iic'
+  Processing 'iic_top'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Warning: Cannot perform multibit optimization on 'cell' 'sda_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'scl_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'ackflag_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'ackflag_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'ackflag_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_7'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_6'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_5'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_4'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_3'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw4_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw3_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw2_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw1_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'addr_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'addr_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'addr_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_7'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_6'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_5'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_4'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_3'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'REG_WR_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'rst_n_pad'. (OPT-915)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:02  108207.0     31.95    3607.1   14800.0                          
+    0:00:02  108207.0     31.95    3607.1   14800.0                          
+    0:00:02  108207.0     31.95    3607.1   14800.0                          
+    0:00:02  108207.0     31.95    3607.1   14800.0                          
+    0:00:02  108207.0     31.95    3607.1   14800.0                          
+    0:00:02  108207.0     31.95    3607.1   14800.0                          
+    0:00:02  108130.8     31.97    3609.3   14800.0                          
+    0:00:02  108096.0     31.97    3608.6   14800.0                          
+    0:00:02  108095.8     31.97    3608.5   14800.0                          
+    0:00:02  108095.5     31.97    3608.6   14800.0                          
+    0:00:02  108095.5     31.97    3608.6   14800.0                          
+    0:00:02  108095.5     31.97    3608.6   14800.0                          
+    0:00:02  108095.5     31.97    3608.6   14800.0                          
+    0:00:02  108095.5     31.97    3608.6   14800.0                          
+    0:00:02  108096.8     31.96    3608.5   14689.6                          
+    0:00:02  108096.8     31.96    3608.5   14689.6                          
+    0:00:02  108096.8     31.96    3608.5   14689.6                          
+    0:00:02  108096.8     31.96    3608.5   14689.6                          
+    0:00:02  108096.8     31.96    3608.5   14689.6                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:02  108096.8     31.96    3608.5   14689.6                          
+    0:00:02  108098.0     31.94    3608.3   14689.6                          
+    0:00:03  108085.9     31.94    6270.4   14689.6                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:03  108085.9     31.94    6270.4   14689.6                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:03  108085.9     31.94    6270.4   14689.6                          
+    0:00:03  108085.9     31.94    6270.4   14689.6                          
+    0:00:03  108085.9     31.94    6270.4   14689.6                          
+    0:00:03  108075.8     32.78    6271.2   14689.6                          
+    0:00:03  108075.4     32.78    6271.2   14689.6                          
+    0:00:03  108074.5     32.78    6271.2   14689.6                          
+    0:00:03  108074.5     32.78    6271.2   14689.6                          
+    0:00:03  108074.5     32.78    6271.2   14689.6                          
+    0:00:03  108074.5     32.78    6271.2   14689.6                          
+    0:00:03  108074.5     32.78    6271.2   14689.6                          
+    0:00:03  108074.5     32.78    6271.2   14689.6                          
+    0:00:03  108074.5     32.78    6271.2   14689.6                          
+    0:00:03  108073.2     32.80    6271.4   14689.6                          
+    0:00:03  108073.2     32.80    6271.4   14689.6                          
+    0:00:03  108073.2     32.80    6271.4   14689.6                          
+    0:00:03  108073.2     32.80    6271.4   14689.6                          
+    0:00:03  108073.2     32.80    6271.4   14689.6                          
+    0:00:03  108073.2     32.80    6271.4   14689.6                          
+    0:00:03  108073.2     32.80    6271.4   14689.6                          
+    0:00:03  108078.2     31.98    6270.4   14689.6                          
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db'
+
+  Optimization Complete
+  ---------------------
+Writing verilog file '/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v'.
+1
+Current design is 'iic_top'.
+design_vision> source ./synthesis.tcl
+Running PRESTO HDLC
+Compiling source file ../rtl_new/iic_all.v
+Presto compilation completed successfully.
+Running PRESTO HDLC
+
+Inferred tri-state devices in process
+        in routine iic_top line 1197 in file
+                '../rtl_new/iic_all.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+|  net_sda_tri  | Tri-State Buffer |   1   | N  |
+=================================================
+
+Inferred tri-state devices in process
+        in routine iic_top line 1198 in file
+                '../rtl_new/iic_all.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+| net_sda_o_tri | Tri-State Buffer |   1   | N  |
+=================================================
+Presto compilation completed successfully.
+Warning: Overwriting design file '/home/stu23/sorin/ic_project_lab/synthesis/iic_top.db'. (DDB-24)
+Elaborated 1 design.
+Current design is now 'iic_top'.
+Current design is 'iic_top'.
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               /home/stu23/sorin/ic_project_lab/synthesis/iic_top.db, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+Current design is 'iic_top'.
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               /home/stu23/sorin/ic_project_lab/synthesis/iic_top.db, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+
+Information: There are 2 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'iic_DW01_inc_0'
+  Processing 'iic'
+  Processing 'iic_top'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Warning: Cannot perform multibit optimization on 'cell' 'sda_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'scl_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'ackflag_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'ackflag_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'ackflag_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_7'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_6'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_5'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_4'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_3'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw4_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw3_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw2_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw1_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'addr_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'addr_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'addr_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_7'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_6'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_5'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_4'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_3'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'REG_WR_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'rst_n_pad'. (OPT-915)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01  108209.5      0.00       0.0   14813.7                          
+    0:00:01  108209.5      0.00       0.0   14813.7                          
+    0:00:01  108209.5      0.00       0.0   14813.7                          
+    0:00:01  108209.5      0.00       0.0   14813.7                          
+    0:00:01  108209.5      0.00       0.0   14813.7                          
+    0:00:01  108209.5      0.00       0.0   14813.7                          
+    0:00:01  108050.0      0.00       0.0   14813.7                          
+    0:00:01  108050.0      0.00       0.0   14813.7                          
+    0:00:01  108050.0      0.00       0.0   14813.7                          
+    0:00:01  108050.0      0.00       0.0   14813.7                          
+    0:00:01  108050.0      0.00       0.0   14813.7                          
+    0:00:01  108051.2      0.00       0.0   14703.3                          
+    0:00:01  108053.0      0.00       0.0   14689.6                          
+    0:00:01  108053.0      0.00       0.0   14689.6                          
+    0:00:01  108053.0      0.00       0.0   14689.6                          
+    0:00:01  108053.0      0.00       0.0   14689.6                          
+    0:00:01  108053.0      0.00       0.0   14689.6                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:01  108053.0      0.00       0.0   14689.6                          
+    0:00:01  108053.0      0.00       0.0   14689.6                          
+    0:00:02  107999.6      0.00       0.0   14843.9                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:02  107999.6      0.00       0.0   14843.9                          
+    0:00:02  108002.8      0.00       0.0   14689.6                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:02  108002.8      0.00       0.0   14689.6                          
+    0:00:02  108002.8      0.00       0.0   14689.6                          
+    0:00:02  108002.8      0.00       0.0   14689.6                          
+    0:00:02  108002.0      0.00       0.0   14689.6                          
+    0:00:02  108002.0      0.00       0.0   14689.6                          
+    0:00:02  108002.0      0.00       0.0   14689.6                          
+    0:00:02  108002.0      0.00       0.0   14689.6                          
+    0:00:02  108002.0      0.00       0.0   14689.6                          
+    0:00:02  108002.0      0.00       0.0   14689.6                          
+    0:00:02  108002.0      0.00       0.0   14689.6                          
+    0:00:02  108002.0      0.00       0.0   14689.6                          
+    0:00:02  108002.0      0.00       0.0   14689.6                          
+    0:00:02  108002.0      0.00       0.0   14689.6                          
+    0:00:02  108002.0      0.00       0.0   14689.6                          
+    0:00:02  108002.0      0.00       0.0   14689.6                          
+    0:00:02  108002.0      0.00       0.0   14689.6                          
+    0:00:02  108002.0      0.00       0.0   14689.6                          
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db'
+
+  Optimization Complete
+  ---------------------
+Writing verilog file '/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v'.
+1
+Current design is 'iic_top'.
+design_vision> report_timing
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : iic_top
+Version: G-2012.06-SP5
+Date   : Sun Nov 22 18:08:42 2015
+****************************************
+
+Operating Conditions: cb13fs120_tsmc_max   Library: cb13fs120_tsmc_max
+Wire Load Model Mode: enclosed
+
+  Startpoint: sda (input port clocked by clk)
+  Endpoint: sda (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  iic_top            140000                cb13fs120_tsmc_max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     2.00       2.00 f
+  sda (inout)                             36.35      38.35 f
+  sda_pad/PAD (pc3b03)                     0.05      38.40 f
+  sda_pad/CIN (pc3b03)                    -1.18      37.22 f
+  U8/ZN (inv0d1)                           0.07      37.29 r
+  net_sda_tri/ZN (invtd1)                  0.13      37.42 f
+  U7/ZN (inv0d1)                           0.06      37.48 r
+  net_sda_o_tri/ZN (invtd4)                0.71      38.19 f
+  sda_pad/PAD (pc3b03)                     2.13      40.32 f
+  sda (inout)                              0.05      40.37 f
+  data arrival time                                  40.37
+
+  clock clk (rise edge)                  100.00     100.00
+  clock network delay (ideal)              0.00     100.00
+  clock uncertainty                       -0.35      99.65
+  output external delay                   -2.00      97.65
+  data required time                                 97.65
+  -----------------------------------------------------------
+  data required time                                 97.65
+  data arrival time                                 -40.37
+  -----------------------------------------------------------
+  slack (MET)                                        57.28
+
+
+1
+design_vision> exit
+
+Memory usage for main task 179 Mbytes.
+Memory usage for this session 179 Mbytes.
+CPU usage for this session 25 seconds ( 0.01 hours ).
+
+Thank you...
+

@@ -1,0 +1,109 @@
+Loading db file '/home/stu19/ic_project_lab/ref/db/sc_max.db'
+Loading db file '/home/stu19/ic_project_lab/ref/db/sc_min.db'
+Loading db file '/home/stu19/ic_project_lab/ref/db/io_max.db'
+Loading db file '/home/stu19/ic_project_lab/ref/db/io_min.db'
+Loading db file '/home/stu19/ic_project_lab/ref/db/special_max.db'
+Loading db file '/home/stu19/ic_project_lab/ref/db/special_min.db'
+Loading db file '/home/stu19/ic_project_lab/ref/db/ram16x128_max.db'
+Loading db file '/home/stu19/ic_project_lab/ref/db/ram16x128_min.db'
+Loading db file '/home/stu19/ic_project_lab/ref/db/ram4x32_max.db'
+Loading db file '/home/stu19/ic_project_lab/ref/db/ram4x32_min.db'
+Loading db file '/home/stu19/ic_project_lab/ref/db/ram8x64_max.db'
+Loading db file '/home/stu19/ic_project_lab/ref/db/ram8x64_min.db'
+Loading db file '/home/stu19/ic_project_lab/ref/db/ram32x64_max.db'
+Loading db file '/home/stu19/ic_project_lab/ref/db/ram32x64_min.db'
+Initializing gui preferences from file  /home/stu19/.synopsys_icc_prefs.tcl
+icc_shell> source ./scripts/2nd_pass_setup.tcl
+Start to load technology file ../ref/tech/cb13_6m.tf.
+Warning: Layer 'PRODUM' is missing the attribute 'minSpacing'. (line 312) (TFCHK-014)
+Warning: Layer 'PRODUM' is missing the attribute 'minWidth'. (line 312) (TFCHK-014)
+Technology file ../ref/tech/cb13_6m.tf has been loaded successfully.
+Loading db file '/tools/synopsys/icc_vG-2012.06-SP5/libraries/syn/gtech.db'
+Loading db file '/tools/synopsys/icc_vG-2012.06-SP5/libraries/syn/standard.sldb'
+Type of creating bus for undefined cells : 0
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 1 *****
+
+*****  Pass 1 Complete *****
+Elapsed =    0:00:00, CPU =    0:00:00
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 2 *****
+
+*****  Pass 2 Complete *****
+
+*****   Verilog HDL translation completed! *****
+Elapsed =    0:00:00, CPU =    0:00:00
+Hierarchy Preservation is turned ON
+The quick-attach skip-search mode has been turned on.
+  Start axu naming escaping style change ...
+  End axu naming escaping style change, status is 1
+Checking single pin net for cell 'test.CEL' now...
+Total number of cell instances: 28
+Total number of nets: 37
+Total number of ports: 4 (include 0 PG ports)
+Total number of hierarchical cell instances: 2
+
+The quick-attach skip-search mode has been turned off.
+INFO:  total find 0 pg nets connected with tie net.
+Elapsed =    0:00:00, CPU =    0:00:00
+Information: Read verilog completed successfully.
+Information: connected 28 power ports and 28 ground ports
+Error: Pin name VDDO specified by power_pin or ground_pin option is invalid. (MWUI-715)
+Error: Pin name VSSO specified by power_pin or ground_pin option is invalid. (MWUI-715)
+Error: derive_pg_connection failed
+Error: Pin name VDDQ specified by power_pin or ground_pin option is invalid. (MWUI-715)
+Error: Pin name VSSQ specified by power_pin or ground_pin option is invalid. (MWUI-715)
+Error: derive_pg_connection failed
+reconnected total 0 tie highs and 0 tie lows
+Information: linking reference library : /home/stu19/ic_project_lab/ref/mw_lib/sc. (PSYN-878)
+Information: linking reference library : /home/stu19/ic_project_lab/ref/mw_lib/io. (PSYN-878)
+Information: linking reference library : /home/stu19/ic_project_lab/ref/mw_lib/special. (PSYN-878)
+Information: linking reference library : /home/stu19/ic_project_lab/ref/mw_lib/ram4x32. (PSYN-878)
+Information: linking reference library : /home/stu19/ic_project_lab/ref/mw_lib/ram8x64. (PSYN-878)
+Information: linking reference library : /home/stu19/ic_project_lab/ref/mw_lib/ram32x64. (PSYN-878)
+Information: linking reference library : /home/stu19/ic_project_lab/ref/mw_lib/ram16x128. (PSYN-878)
+Warning: Could not find a valid driver for the hierarchical Power net 'VDD'. (MWDC-285)
+Warning: Could not find a valid driver for the hierarchical Ground net 'VSS'. (MWDC-285)
+
+  Linking design 'test'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (2 designs)               test.CEL, etc
+  cb13fs120_tsmc_max (library) /home/stu19/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu19/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu19/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu19/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu19/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu19/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu19/ic_project_lab/ref/db/ram32x64_max.db
+
+Load global CTS reference options from NID to stack
+# GUI Debug: Building dc from empty. -- Time: 2sec 52ms
+ Info: hierarchy_separator was changed to /
+
+Reading SDC version 1.9...
+Warning: Constraint 'set_wire_load_mode' is not supported by icc_shell. (SDC-3)
+
+
+Summary of unsupported constraints:
+Information: Ignored 1 unsupported 'set_wire_load_mode' constraint. (SDC-4)
+ Info: hierarchy_separator was changed to /
+Information: Updating graph... (UID-83)
+icc_shell> create_mw_lib test.mw         -technology $tech_file         -mw_reference_library $mw_ref_libs         -open
+Error: Library 'test.mw' already exists. (MWUI-004)
+0
+icc_shell> 
+icc_shell> rm test.mw/
+Error: unknown command 'rm' (CMD-005)
+icc_shell> exit
+
+Memory usage for main task 246 Mbytes.
+Memory usage for this session 246 Mbytes.
+CPU usage for this session 6 seconds ( 0.00 hours ).
+
+Thank you...
+

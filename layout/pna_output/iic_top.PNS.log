@@ -1,0 +1,21 @@
+
+Name of design : iic_top
+Number of cell instance masters in the library : 61
+Number of cell instances in the design : 663
+Target IR drop : 132.000 mV
+Processing net VDD ...
+Average power dissipation in iic_top :   350.00 mW
+Power supply voltage :     1.32 V
+Average current in iic_top :   265.15 mA
+Number of power pad nodes reaching to the power ports of the leaf cells or blocks : 8
+Maximum IR drop in iic_top : 115.93 mV
+Maximum current in iic_top : 82.627 mA
+Processing net VSS ...
+Average power dissipation in iic_top :   350.00 mW
+Power supply voltage :     1.32 V
+Average current in iic_top :   265.15 mA
+Number of power pad nodes reaching to the power ports of the leaf cells or blocks : 7
+Maximum IR drop in iic_top : 135.45 mV
+Maximum current in iic_top : 90.452 mA
+Memory usage for design data :       1335.296 Kbytes
+Overall takes     0.13 seconds

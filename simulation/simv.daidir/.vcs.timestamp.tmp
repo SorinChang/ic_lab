@@ -1,0 +1,100 @@
+0 
+21
+-Mamsrun=
+-Masflags=--32
+-Mcc=gcc
+-Mcfl= -pipe -m32 -O -I/tools/synopsys/vcs_vD-2010.06-SP1/include
+-Mcmodrun=
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mldflags=-melf_i386 -m32
+-Mobjects= /tools/synopsys/vcs_vD-2010.06-SP1/linux/lib/libvirsim.so /tools/synopsys/vcs_vD-2010.06-SP1/linux/lib/librterrorinf.so /tools/synopsys/vcs_vD-2010.06-SP1/linux/lib/libsnpsmalloc.so
+-Mout=simv
+-Msaverestoreobj=/tools/synopsys/vcs_vD-2010.06-SP1/linux/lib/vcs_save_restore_new.o
+-Msyslibs=/tools/synopsys/vcs_vD-2010.06-SP1/linux/lib/ctype-stubs_32.a -ldl
+-Mvcsaceobjs=
+-cm_xmldb
+-gen_obj
+-v
+../rtl/test.v
+../testbench/testbench.v
+/tools/synopsys/vcs_vD-2010.06-SP1/linux/bin/vcs1
+67
+XA_HOME=/tools/synopsys/xa_vG-2012.06-SP2
+VNCDESKTOP=sun:19 (stu19)
+VMR_MODE_FLAG=32
+VIRSIMHOME=/tools/synopsys/vcs_vD-2010.06-SP1/gui/virsim
+VERA_HOME=/tools/synopsys/vera_vD-2009.12/vera_vD-2009.12_amd64
+VENDOR=unknown
+VCS_HOME=/tools/synopsys/vcs_vD-2010.06-SP1
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH=linux
+VCS_AMD_PURE32=1
+UNAME=/bin/uname
+TOOL_HOME=/tools/synopsys/vcs_vD-2010.06-SP1/linux
+SYN_HOME=/tools/synopsys/syn_vG-2012.06-SP5
+SYNPLIFY_HOME=/tools/synopsys/fpga_vF-2011.09-SP1
+SYNOPSYS=/tools/synopsys/syn_vG-2012.06-SP5
+STARRC_HOME=/tools/synopsys/starrc_vH-2012.12-SP2
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+SNPS_VCS_VIRSIM_ENABLE=yes
+SNPSLMD_LICENSE_FILE=2800@sun:2800@moon:/tools/synopsys/vcs_vD-2010.06-SP1/flexlm//license.dat
+SESSION_MANAGER=local/sun:/tmp/.ICE-unix/13154
+SENTAURUS=/tools/synopsys/sentaurus_vF-2011.09-SP1
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+REMOTEHOST=192.168.202.117
+QTLIB=/usr/lib64/qt-3.3/lib
+QTINC=/usr/lib64/qt-3.3/include
+QTDIR=/usr/lib64/qt-3.3
+PTS_HOME=/tools/synopsys/pts_vH-2012.12-SP2
+OVA_UUM=0
+OSTYPE=linux
+OA_HOME=/tools/cadence/EDI1113_s002/oa_v22.43.009
+NS_HOME=/tools/synopsys/ns_vF-2011.09-SP1
+MGLS_LICENSE_FILE=1717@sun
+MGC_HOME=/tools/mentor/calibre_2009.2_27
+LESSOPEN=|/usr/bin/lesspipe.sh %s
+KDE_IS_PRELINKED=1
+KDEDIR=/usr
+INPUTRC=/etc/inputrc
+IDENTIFY_HOME=/tools/synopsys/identify_vF-2011.09-SP1
+ICC_HOME=/tools/synopsys/icc_vG-2012.06-SP5
+HSPICE_HOME=/tools/synopsys/hspice_vG-2012.06-SP2
+HSIM_HOME=/tools/synopsys/hsim_vF-2011.09-SP1
+HPEESOF_HOME=/tools/agilent/ADS2011_01
+HPEESOF_DIR=/tools/agilent/ADS2011_01
+HOSTTYPE=x86_64-linux
+HOSTNAME=sun
+HOST=sun
+G_BROKEN_FILENAMES=1
+GTK_RC_FILES=/etc/gtk/gtkrc:/home/stu19/.gtkrc-1.2-gnome2
+GROUP=student
+GNOME_KEYRING_SOCKET=/tmp/keyring-OTUo4u/socket
+GNOME_DESKTOP_SESSION_ID=Default
+FM_HOME=/tools/synopsys/fm_vG-2012.06-SP1
+EDI_HOME=/tools/cadence/EDI1113_s002
+DW_HOME=/tools/synopsys/coreTools_vD-2010.03
+DOC_HOME=/tools/synopsys/docs
+DESKTOP_STARTUP_ID=
+CVS_RSH=ssh
+CSS_HOME=/tools/synopsys/css_vG-2012.03-SP2
+COLORTERM=gnome-terminal
+CDS_ROOT=/tools/cadence/cds5141
+CDS_Netlisting_Mode=Analog
+CDS_LIC_FILE=5280@sun:5280@moon
+CDS_INST_DIR=/tools/cadence/cds5141
+CDS_INSTALL_DIR=/tools/cadence/cds5141/tools.lnx86/dfII
+CDSDIR=/tools/cadence/cds5141
+ASTRO_HOME=/tools/synopsys/astro_vZ-2007.03-SP12
+0
+2
+1446603779 ../testbench/testbench.v
+1446603767 ../rtl/test.v
+4
+0 
+1290748130 /tools/synopsys/vcs_vD-2010.06-SP1/linux/lib/libvirsim.so
+1290747569 /tools/synopsys/vcs_vD-2010.06-SP1/linux/lib/librterrorinf.so
+1290747501 /tools/synopsys/vcs_vD-2010.06-SP1/linux/lib/libsnpsmalloc.so

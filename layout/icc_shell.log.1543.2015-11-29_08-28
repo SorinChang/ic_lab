@@ -1,0 +1,89 @@
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_min.db'
+Initializing gui preferences from file  /home/stu23/.synopsys_icc_prefs.tcl
+icc_shell> start_gui
+Information: Visibility is turned ON for cells and cell contents because the task is set to Block Implementation (GUI-026)
+icc_shell> open_mw_lib /home/stu23/sorin/ic_project_lab/layout/iic.mw
+{iic.mw}
+icc_shell> open_mw_cel iic_routed
+Preparing data for query................... 
+Information: Opened "iic_routed.CEL;1" from "/home/stu23/sorin/ic_project_lab/layout/iic.mw" library. (MWUI-068)
+icc_shell> 
+Loading db file '/tools/synopsys/icc_vG-2012.06-SP5/libraries/syn/gtech.db'
+Information: linking reference library : /home/stu23/sorin/ic_project_lab/ref/mw_lib/io. (PSYN-878)
+Information: linking reference library : /home/stu23/sorin/ic_project_lab/ref/mw_lib/sc. (PSYN-878)
+Warning: Could not find a valid driver for the hierarchical Power net 'VDD'. (MWDC-285)
+Warning: Could not find a valid driver for the hierarchical Ground net 'VSS'. (MWDC-285)
+Information: Loading local_link_library attribute {sc_max.db}. (MWDC-290)
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               iic_routed.CEL, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+Load global CTS reference options from NID to stack
+# GUI Debug: Building dc from empty. -- Time: 2sec 204ms
+Information: The design has horizontal rows, and Y-symmetry has been used for sites. (MWDC-217)
+Floorplan loading succeeded.
+Information: Updating graph... (UID-83)
+Information: Updating design information... (UID-85)
+Loading db file '/tools/synopsys/icc_vG-2012.06-SP5/libraries/syn/generic.sdb'
+icc_shell> open_mw_cel iic_floorplan_init
+Preparing data for query................... 
+Information: Opened "iic_floorplan_init.CEL;1" from "/home/stu23/sorin/ic_project_lab/layout/iic.mw" library. (MWUI-068)
+icc_shell> open_mw_cel iic_floorplan_pns
+Preparing data for query................... 
+Information: Opened "iic_floorplan_pns.CEL;1" from "/home/stu23/sorin/ic_project_lab/layout/iic.mw" library. (MWUI-068)
+icc_shell> open_mw_cel iic_cts
+Preparing data for query................... 
+Information: Opened "iic_cts.CEL;1" from "/home/stu23/sorin/ic_project_lab/layout/iic.mw" library. (MWUI-068)
+icc_shell> 
+Information: linking reference library : /home/stu23/sorin/ic_project_lab/ref/mw_lib/io. (PSYN-878)
+Information: linking reference library : /home/stu23/sorin/ic_project_lab/ref/mw_lib/sc. (PSYN-878)
+Warning: Could not find a valid driver for the hierarchical Power net 'VDD'. (MWDC-285)
+Warning: Could not find a valid driver for the hierarchical Ground net 'VSS'. (MWDC-285)
+Information: Loading local_link_library attribute {sc_max.db}. (MWDC-290)
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               iic_cts.CEL, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+Load global CTS reference options from NID to stack
+# GUI Debug: Building dc from empty. -- Time: 222ms
+Information: The design has horizontal rows, and Y-symmetry has been used for sites. (MWDC-217)
+Floorplan loading succeeded.
+Information: Updating graph... (UID-83)
+icc_shell> current_mw_cel {iic_routed.CEL;1}
+icc_shell> change_working_design_stack {iic_cts.CEL;1}
+icc_shell> change_working_design_stack {iic_routed.CEL;1}
+icc_shell> open_mw_cel iic_data_setup
+Preparing data for query................... 
+Information: Opened "iic_data_setup.CEL;1" from "/home/stu23/sorin/ic_project_lab/layout/iic.mw" library. (MWUI-068)
+icc_shell> 

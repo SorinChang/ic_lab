@@ -1,0 +1,490 @@
+#@ # 
+#@ # Running icc_shell Version G-2012.06-ICC-SP5 for linux -- Jan 17, 2013
+#@ # Date:   Sun Nov 29 08:28:13 2015
+#@ # Run by: stu23@sun
+#@ 
+
+#@ # -- Starting source .synopsys_dc.setup
+
+#@ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#@ # Suppress known and/or annoying messages
+#@ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#@ suppress_message {TIM-112 TIM-052 OPT-170 PSYN-025 UID-401}
+#@ suppress_message {PSYN-850 PSYN-087 PSYN-040 PSYN-088}
+#@ 
+#@ # "Information" about changing wire load model and Warning about 12 high fanout nets
+#@ # during sourcing of opt_ctrl.tcl file:
+#@ suppress_message {OPT-171 TIM-134}
+#@ 
+#@ # "Information" about 'SNPS_LOGIC0/1' having no connections 
+#@ # during create_fp_placement:
+#@ suppress_message {MWDC-040}
+#@ 
+#@ # During congestion analysis:
+#@ suppress_message {ZRT-026 ZRT-027}
+#@ 
+#@ # Inconsistent lib data + idela and high fanout net warnings during report_timing:
+#@ suppress_message {RCEX-018 RCEX-020 RCEX-021 TIM-134}
+#@ 
+#@ # AHFS warning during optimize_fp_timing:
+#@ suppress_message {PSYN-1002}
+#@ 
+#@ # "Extra braces" warning during write_floorplan:
+#@ suppress_message {MWUI-041}
+#@ 
+#@ # Warnings during 2nd pass data setup and loading of DEF:
+#@ suppress_message {TFCHK-049 TFCHK-050 TFCHK-055 TFCHK-084 MWDEFR-159 DDEFR 054 DDEFR-010 DDEFR-011 DDEFR-012}
+#@ 
+#@ # Warning during final "legalize_placement" that the MACROS are "not integer multiples of min site height"
+#@ suppress_message {PSYN-523}
+#@ 
+#@ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#@ # Load useful "functions" or procedures, like "view"
+#@ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#@ source ../ref/tools/procs.tcl
+#@ # -- Starting source ../ref/tools/procs.tcl
+
+#@ # Synopsys Customer Education Services
+#@ # IC Compiler Workshop series
+#@ #
+#@ # Tcl procedures to simplify life...
+#@ 
+#@ puts "\#\#\# Processing procs.tcl..."
+#@ 
+#@ create_command_group CES_procs
+#@ 
+#@ # Get command results/reports in separate graphical tk window
+#@ # This expects view.tk to be in the path, which is the other half
+#@ # of this procedure!
+#@ # Examples: view man compile,  view report_timing -max_paths 20
+#@ #======================================================  
+#@ proc view {args} {
+#@ 	if {$args == ""} { puts "view: Please provide a command."; return }
+#@ 	set tmpfile tmpfile[pid][expr int(rand()*10000)]
+#@ 	redirect $tmpfile {uplevel $args}
+#@ 	# Without redirect, exec echos the PID of the new process to the screen
+#@     #	redirect /dev/null {exec ../ref/tools/view.tk $tmpfile "$args" &}
+#@ #  per Amin, 2/16/10
+#@     redirect /dev/null {exec ../ref/tools/view.tk $tmpfile "$args" true &}
+#@ }
+#@ define_proc_attributes view 	-info "Display output of any command in a separate Tk window." 	-command_group CES_procs 	-define_args {
+#@ 		{args "Command with arguments" args}
+#@ 	}
+#@ 
+#@ 
+#@ proc report_placement_blockages {} {
+#@ 	foreach_in_collection item [get_placement_blockages -quiet] {
+#@ 		puts "Name:   [get_attribute $item name]"
+#@ 		puts "  Type: [get_attribute $item type]"
+#@ 		puts "  bbox: [get_attribute $item bbox]\n"
+#@ 	}
+#@ }
+#@ define_proc_attributes report_placement_blockages 	-info "Display a summary of all placement blockages in the design" 	-command_group CES_procs
+#@ 
+#@ proc report_route_guides {} {
+#@ 	suppress_message ATTR-3
+#@ 	foreach_in_collection item [get_route_guides -quiet] {
+#@ 		puts "Name:   [get_attribute $item name]"
+#@ 		puts "  switch_preferred_direction: [get_attribute $item switch_preferred_direction]"
+#@ 		puts "  no_preroute_layers:         [get_attribute $item no_preroute_layers]"
+#@ 		puts "  no_signal_layers:           [get_attribute $item no_signal_layers]"
+#@ 		puts "  bbox:                       [get_attribute $item bbox]"
+#@ 	}
+#@ 	unsuppress_message ATTR-3
+#@ }
+#@ define_proc_attributes report_route_guides 	-info "Display a summary of all route guides in the design" 	-command_group CES_procs
+#@ 
+#@ 
+#@ proc async_domain {args} {
+#@ 	parse_proc_arguments -args $args procargs
+#@ 	set clk1 $procargs(clock1)
+#@ 	set clk2 $procargs(clock2)
+#@     set_false_path -from [get_clocks $clk1] -to [get_clocks $clk2]
+#@     set_false_path -from [get_clocks $clk2] -to [get_clocks $clk1]
+#@ }
+#@ define_proc_attributes async_domain 	-info "set false paths between 2 clocks in both directions" 	-command_group CES_procs 	-define_args {
+#@ 		{clock1 "First clock name" clock1}
+#@ 		{clock2 "Second clock name" clock2}
+#@ 	}
+#@ 
+#@ # Generates statistics on the current session:
+#@ #   hostname
+#@ #   uname -a
+#@ #   date
+#@ #   location of current exec
+#@ proc host_stats {} {
+#@ 	uplevel {
+#@ 	puts "##### Session information:"
+#@ 	puts "hostname:  [exec hostname]"
+#@ 	puts "uname -a:  [exec uname -a]"
+#@ 	puts "date:      [date]"
+#@ 	puts "bin path:  $bin_path"
+#@ 	puts "##### End session information\n"
+#@ 	}
+#@ }
+#@ define_proc_attributes host_stats 	-info "Display statistics of the current host (server)" 	-command_group CES_procs
+#@ 
+#@ 
+#@ # Generates timing, constraint and qor reports in the "reports/" directory
+#@ # under the current dir.
+#@ proc gen_reports {args} {
+#@ 
+#@ 	# Defaults:
+#@ 	set procargs(-verbose) false
+#@ 	set procargs(-dir) "./reports"
+#@ 
+#@ 	parse_proc_arguments -args $args procargs
+#@ 	set verbose $procargs(-verbose)
+#@ 	set prefix $procargs(-prefix)
+#@ 	set dir $procargs(-dir)
+#@ 
+#@ 	file mkdir $dir
+#@ 	update_timing
+#@ 	if ($verbose) { puts "##### Writing $dir/$prefix.constraint" }
+#@ 	redirect $dir/$prefix.constraint {report_constraint -nosplit -all} 
+#@ 	if ($verbose) { puts "##### Writing $dir/$prefix.timing" }
+#@ 	redirect $dir/$prefix.timing {report_timing -nosplit}
+#@ 	if ($verbose) { puts "##### Writing $dir/$prefix.min.timing" }
+#@ 	redirect $dir/$prefix.min.timing {report_timing -delay min -nosplit}
+#@ 	if ($verbose) { puts "##### Writing $dir/$prefix.qor" }
+#@ 	redirect $dir/$prefix.qor {report_qor}
+#@ }
+#@ 
+#@ define_proc_attributes gen_reports 	-info "Generates min/max timing, constraint and qor reports" 	-command_group CES_procs 	-define_args {
+#@ 		{-prefix "Prefix for report files" "<name>" string required}
+#@ 		{-verbose "Be verbose!" "" boolean optional}
+#@ 		{-dir "Destination directory. Default: ./reports" "dest_dir" string optional}
+#@ 	}
+#@ 
+#@ 
+#@ proc reset_timer {timer_name} {
+#@     global $timer_name
+#@     redirect /dev/null {set $timer_name [clock seconds]}
+#@ }
+#@ define_proc_attributes reset_timer 	-info "Resets a named timer" 	-command_group CES_procs 	-define_args {
+#@ 		{timer_name "Name of timer" timer_name}
+#@ 	}
+#@ 
+#@ proc report_timer {timer_name message} {
+#@     upvar $timer_name time
+#@ 
+#@     set mins [expr ([clock seconds] - $time) / 60]
+#@     set secs [expr ([clock seconds] - $time) % 60]
+#@     echo [format "####----#### Runtime: %3d:%02d minutes for \"$message\"" $mins $secs]
+#@ }
+#@ define_proc_attributes report_timer 	-info "report the elapsed time of a named timer" 	-command_group CES_procs 	-define_args {
+#@ 		{timer_name "Name of timer" timer_name}
+#@ 		{message "message to display with the value of the timer" message}
+#@ 	}
+#@ 
+#@ 
+#@ proc measure_time {args} {
+#@     set time [clock seconds]
+#@ 	set command [join $args]
+#@     echo "##### Started timer for command \"$command\""
+#@     uplevel $args
+#@     set mins [expr ([clock seconds] - $time) / 60]
+#@     set secs [expr ([clock seconds] - $time) % 60]
+#@     echo [format "####----#### Runtime: %3d:%02d minutes for command \"$command\"" $mins $secs]
+#@ }
+#@ define_proc_attributes measure_time 	-info "Run a command while measuring the time it takes" 	-command_group CES_procs 	-define_args {
+#@ 		{script "Tcl-commands to time (and run)" args}
+#@ 	}
+#@ 
+#@ proc gui {} {
+#@ 	uplevel {
+#@ 		if {$in_gui_session == false} {
+#@ 			gui_start
+#@ 		} else {
+#@ 			gui_stop
+#@ 			echo "... or just 'gui'"
+#@ 		}
+#@ 	}
+#@ }
+#@ define_proc_attributes gui 	-info "Start or stop the GUI" 	-command_group CES_procs
+#@ 
+#@ proc vman {cmd} {
+#@ 	if {$::in_gui_session == false} {
+#@ 		view man $cmd
+#@ 	} else {
+#@ 		gui_show_man_page $cmd
+#@ 	}
+#@ }
+#@ define_proc_attributes vman 	-info "Display a man page using the GUI man reader or Tcl/TK." 	-dont_abbrev 	-command_group CES_procs 	-define_args {
+#@ 		{cmd "command-name" cmd}
+#@ 	}
+#@ 
+#@ 
+#@ 
+#@ #
+#@ # Always Ask
+#@ # This useful procedure is on solvnet, Doc Id  012959
+#@ #
+#@ proc aa {args} {
+#@ 
+#@    parse_proc_arguments -args $args results
+#@ 
+#@    echo "*********  Commands **********"
+#@    help *$results(pattern)*
+#@ 
+#@    echo "********* Variables **********"
+#@    uplevel "printvar *$results(pattern)*"
+#@ 
+#@    if {[info exists results(-verbose)]} {
+#@       echo "********* -help *************"
+#@       apropos *$results(pattern)*
+#@    }
+#@ }; # end proc
+#@ 
+#@ define_proc_attributes aa -info "always ask - Searches Synopsys help for both commands and variables" 	-command_group CES_procs 	-define_args {
+#@ 		{pattern "Pattern to search for" pattern string required}
+#@ 		{-verbose "Search -help as well" "" boolean optional}
+#@ 	}
+#@ 
+#@ # Idea for a quick power ring proc...
+#@ 
+#@ proc ring_it {args} {
+#@ 	# Defaults:
+#@ 	set procargs(-cells) ""
+#@ 	set procargs(-nets) "VDD VSS"
+#@ 	set procargs(-location) "5"
+#@ 	set procargs(-horiz_layer) "METAL3"
+#@ 	set procargs(-vert_layer) "METAL2"
+#@ 	set procargs(-width) "4"
+#@ 	set procargs(-full) "false"
+#@ 
+#@ 	parse_proc_arguments -args $args procargs
+#@ 	set cells $procargs(-cells)
+#@ 	set nets  $procargs(-nets)
+#@ 	set location $procargs(-location)
+#@ 	set horiz_layer $procargs(-horiz_layer)
+#@ 	set vert_layer $procargs(-vert_layer)
+#@ 	set width $procargs(-width)
+#@ 	set full $procargs(-full)
+#@ 
+#@ 
+#@ 	if {$cells == ""} {
+#@ 		puts "ERROR:  no cells specified!"
+#@ 		return
+#@ 	}
+#@ 
+#@ #-location {1 2 3 4 5 6 7 8 9} matrix 1= bottom left, 2 bottom middle, ..., 9 is top right.
+#@ #create connections to core ring based on location - we assume that if any number but 5 (default) is given,
+#@ #we will create connections to the ring around the core! (-extend_xy)
+#@ 
+#@ 
+#@ 	switch $location {
+#@ 		1 { set extend "-extend_tl -extend_rl"; set skip "-skip_left_side -skip_bottom_side" }
+#@ 		2 { set extend "-extend_ll -extend_rl"; set skip "-skip_bottom_side" }
+#@ 		3 { set extend "-extend_th -extend_ll"; set skip "-skip_right_side -skip_bottom_side" }
+#@ 		4 { set extend "-extend_tl -extend_bl"; set skip "-skip_left_side" }
+#@ 		5 { set extend ""; set skip "" }
+#@ 		6 { set extend "-extend_bh -extend_th"; set skip "-skip_right_side" }
+#@ 		7 { set extend "-extend_rh -extend_bl"; set skip "-skip_top_side -skip_left_side" }
+#@ 		8 { set extend "-extend_lh -extend_rh"; set skip "-skip_top_side" }
+#@ 		9 { set extend "-extend_lh -extend_bh"; set skip "-skip_top_side -skip_right_side" }
+#@ 		default { set extend ""; set skip "" }
+#@ 	}
+#@ 
+#@ 	if {$full} {
+#@ 		set skip "";
+#@ 		switch $location {
+#@ 			1 { set extend "$extend -extend_bl -extend_ll" }
+#@ 			2 {  }
+#@ 			3 { set extend "$extend -extend_rl -extend_bh" }
+#@ 			4 {  }
+#@ 			5 {  }
+#@ 			6 {  }
+#@ 			7 { set extend "$extend -extend_tl -extend_lh" }
+#@ 			8 {  }
+#@ 			9 { set extend "$extend -extend_rh -extend_th" }
+#@ 			default {  }
+#@ 		}
+#@ 	}
+#@ 
+#@ 	puts "Using $horiz_layer for horizontal ring sections."
+#@ 	puts "Using $vert_layer for vertical ring sections."
+#@ 	puts "Routing power nets $nets."
+#@ 	puts "Ring width: $width"
+#@ 
+#@ 	eval create_rectangular_rings -nets {$nets} -around specified_as_group -cells $cells $extend -left_segment_layer $vert_layer -right_segment_layer $vert_layer -top_segment_layer $horiz_layer -bottom_segment_layer $horiz_layer $skip -left_segment_width $width -right_segment_width $width -bottom_segment_width $width -top_segment_width $width
+#@ 
+#@ }
+#@ 
+#@ 
+#@ define_proc_attributes ring_it 	-info "Creates a simple power ring around macros" 	-command_group CES_procs 	-define_args {
+#@ 		{-cells "Macro cells to create ring around" "<cells>" string required}
+#@ 		{-nets "names of power/ground nets. Default: VDD VSS" "<pgnets>" string optional}
+#@ 		{-location "location of macro, 1-9. 1 is lower left, 9 upper right corner. Default: 5" "<1-9>" string optional}
+#@ 		{-horiz_layer "Layer to use for horizontal ring sections. Default: METAL3" "string" string optional}
+#@ 		{-vert_layer "Layer to use for vertical ring sections. Default: METAL2" "string" string optional}
+#@ 		{-width "Width of ring. Default: 4" "integer" string optional}
+#@ 		{-full "Create a complete ring (we assume we'll re-use the core ring otherwise)" "" boolean optional}
+#@ 	}
+#@ 
+#@ 
+#@ 
+#@ 
+#@ # Display all customer procedures:
+#@ echo "The following procedures are defined for use in this workshop."
+#@ echo "They are NOT standard IC Compiler commands."
+#@ help CES_procs
+#@ # -- End source ../ref/tools/procs.tcl
+
+#@ 
+#@ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#@ # General useful settings
+#@ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#@ # Disable more-like page mode
+#@ set enable_page_mode false
+#@ # Don't want to see CMD-041 when creating new variables
+#@ set sh_new_variable_message false
+#@ # Increase history buffer from 20 commands to 100
+#@ history keep 100
+#@ 
+#@ 
+#@ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#@ # Enable logging of commands and everything by date/shell
+#@ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#@ set timestamp [clock format [clock scan now] -format "%Y-%m-%d_%H-%M"]
+#@ set sh_output_log_file "${synopsys_program_name}.log.[pid].$timestamp"
+#@ set sh_command_log_file "${synopsys_program_name}.cmd.[pid].$timestamp"
+#@ 
+#@ 
+#@ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#@ # Aliases
+#@ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#@ alias v view
+#@ alias rt  "report_timing -nosplit"
+#@ alias rtm "report_timing -nosplit -delay min"
+#@ alias rc  "report_constraint -all_violators -nosplit"
+#@ alias rq report_qor
+#@ alias h history
+#@ alias _ measure_time
+#@ 
+#@ 
+#@ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#@ # Define tie-high/tie-low (logic 1 and logic 0) net names
+#@ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#@ #set mw_logic0_net "VSS"
+#@ #set mw_logic1_net "VDD"
+#@ 
+#@ 
+#@ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#@ # Logic Library settings
+#@ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#@ lappend search_path ../ref/db ../ref/tlup ../ref/mw_lib ../rtl ../ref
+#@ 
+#@ set_app_var target_library "sc_max.db"
+#@ set_app_var link_library "* sc_max.db io_max.db special_max.db ram16x128_max.db ram4x32_max.db ram8x64_max.db ram32x64_max.db"
+#@ 
+#@ set target_library  $target_library
+#@ set link_library    $link_library
+#@ 
+#@ set_min_library sc_max.db -min_version sc_min.db
+#@ set_min_library io_max.db -min_version io_min.db
+#@ set_min_library special_max.db -min_version special_min.db
+#@ set_min_library ram16x128_max.db -min_version ram16x128_min.db
+#@ set_min_library ram4x32_max.db -min_version ram4x32_min.db
+#@ set_min_library ram8x64_max.db -min_version ram8x64_min.db
+#@ set_min_library ram32x64_max.db -min_version ram32x64_min.db
+#@ 
+#@ 
+#@ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#@ # ORCA setup variables
+#@ # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#@ set my_mw_lib    iic.mw
+#@ set mw_path      "../ref/mw_lib"
+#@ set tech_file    "../ref/tech/cb13_6m.tf"
+#@ set tlup_map     "../ref/tlup/cb13_6m.map"
+#@ set tlup_max     "../ref/tlup/cb13_6m_max.tluplus"
+#@ set tlup_min     "../ref/tlup/cb13_6m_min.tluplus"
+#@ #set top_design   "ORCA"
+#@ #set verilog_file "./design_data/RISC_CHIP.v"
+#@ #set sdc_file     "./design_data/RISC_CHIP.sdc"
+#@ #set def_file     "./design_data/RISC_CHIP.def"
+#@ set ctrl_file    "./scripts/opt_ctrl.tcl"
+#@ set derive_pg_file    "./scripts/derive_pg.tcl"
+#@ set libs         {sc io special ram4x32 ram8x64 ram32x64 ram16x128}
+#@ set mw_ref_libs ""
+#@ foreach lib $libs {
+#@         lappend mw_ref_libs $mw_path/$lib
+#@ }
+#@ 
+#@ # -- End source .synopsys_dc.setup
+
+start_gui
+#@ # -- Starting source /tools/synopsys/icc_vG-2012.06-SP5/auxx/tcllib/lib/iwidgets4.0.2/lib/iwidgets/iwidgets.tcl
+
+#@ #
+#@ # iwidgets.tcl
+#@ # ----------------------------------------------------------------------
+#@ # Invoked automatically by [incr Tk] upon startup to initialize
+#@ # the [incr Widgets] package.
+#@ # ----------------------------------------------------------------------
+#@ #  AUTHOR: Mark L. Ulferts               EMAIL: mulferts@spd.dsccc.com
+#@ #
+#@ #  @(#) $Id: iwidgets.tcl.in,v 1.3 2001/08/07 19:56:47 smithc Exp $
+#@ # ----------------------------------------------------------------------
+#@ #                Copyright (c) 1995  Mark L. Ulferts
+#@ # ======================================================================
+#@ # See the file "license.terms" for information on usage and
+#@ # redistribution of this file, and for a DISCLAIMER OF ALL WARRANTIES.
+#@ 
+#@ package require Tcl 8.0
+#@ package require Tk 8.0
+#@ package require Itcl 3.2
+#@ package require Itk 3.2
+#@ 
+#@ namespace eval ::iwidgets {
+#@     namespace export *
+#@ 
+#@     variable library [file dirname [info script]]
+#@     variable version 4.0.2
+#@ }
+#@ 
+#@ lappend auto_path $iwidgets::library 		  [file join $iwidgets::library generic] 		  [file join $iwidgets::library scripts]
+#@ package provide Iwidgets $iwidgets::version
+#@ # -- End source /tools/synopsys/icc_vG-2012.06-SP5/auxx/tcllib/lib/iwidgets4.0.2/lib/iwidgets/iwidgets.tcl
+
+open_mw_lib /home/stu23/sorin/ic_project_lab/layout/iic.mw
+open_mw_cel iic_routed
+win_set_filter -visible -class cell -filter {hard_keepout_margin soft_keepout_margin}
+win_set_filter -visible -class polygon -layer {85 86 87 88 89 90 91 92 93 94 101 111}
+win_set_filter -visible -class placement_blockage -filter {wiring} -layer {}
+win_set_filter -expand_cell_types {std io hard_macro soft_macro ilm other  }
+win_set_select_class -visible {cell port plan_group block_shielding plangroup_padding core_area die_area polygon group shape via terminal fill_cell placement_blockage }
+win_set_filter -class cell -filter {cell_array cell_cover hard_keepout_margin soft_keepout_margin}
+win_set_filter -class placement_blockage -filter {wiring} -layer {}
+win_set_select_class {cell port plan_group group shape via placement_blockage }
+win_select_objects -slct_targets global -at {857.860 789.340} -radius 0.9728
+#@ # GUI Debug: Building dc from empty. -- Time: 2sec 204ms
+
+change_selection 
+change_selection [get_cells -all iic_instance/U162]
+change_selection 
+change_selection [get_cells -all iic_instance]
+change_selection [get_cells -all iic_instance]
+change_selection [get_cells -all iic_instance]
+change_selection [get_cells -all {{iic_instance/pagedata_r_reg[1]}}]
+change_selection 
+open_mw_cel iic_floorplan_init
+open_mw_cel iic_floorplan_pns
+gui_zoom -window [gui_get_current_window -view] -full
+win_select_objects -within { 334.180 779.605 470.220 877.325 } -slct_targets global -slct_targets_operation clear
+gui_zoom -window [gui_get_current_window -view] -rect {{309.275 875.410} {485.550 744.160}}
+gui_zoom -window [gui_get_current_window -view] -rect {{351.695 838.270} {334.065 850.660}}
+gui_zoom -window [gui_get_current_window -view] -rect {{334.130 851.220} {352.775 836.940}}
+gui_zoom -window [gui_get_current_window -view] -rect {{349.075 839.910} {542.705 692.935}}
+open_mw_cel iic_cts
+gui_show_map -window [gui_get_current_window -types Layout -mru] -map {CLOCK_TREES} -show {true}
+#@ # GUI Debug: Building dc from empty. -- Time: 222ms
+
+gui_zoom -window [gui_get_current_window -view] -full
+current_mw_cel {iic_routed.CEL;1}
+change_working_design_stack {iic_cts.CEL;1}
+change_working_design_stack {iic_routed.CEL;1}
+gui_zoom -window [gui_get_current_window -view] -full
+gui_zoom -window [gui_get_current_window -view] -full
+gui_zoom -window [gui_get_current_window -view] -full
+open_mw_cel iic_data_setup

@@ -1,0 +1,375 @@
+### Processing procs.tcl...
+The following procedures are defined for use in this workshop.
+They are NOT standard IC Compiler commands.
+CES_procs:
+ aa                   # always ask - Searches Synopsys help for both commands and variables
+ async_domain         # set false paths between 2 clocks in both directions
+ gen_reports          # Generates min/max timing, constraint and qor reports
+ gui                  # Start or stop the GUI
+ host_stats           # Display statistics of the current host (server)
+ measure_time         # Run a command while measuring the time it takes
+ report_placement_blockages # Display a summary of all placement blockages in the design
+ report_route_guides  # Display a summary of all route guides in the design
+ report_timer         # report the elapsed time of a named timer
+ reset_timer          # Resets a named timer
+ ring_it              # Creates a simple power ring around macros
+ view                 # Display output of any command in a separate Tk window.
+ vman                 # Display a man page using the GUI man reader or Tcl/TK.
+
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_min.db'
+dc_shell> gui_start
+design_vision> source synthesis.tcl
+Running PRESTO HDLC
+Compiling source file ../rtl_new/iic_all.v
+Presto compilation completed successfully.
+Loading db file '/tools/synopsys/syn_vG-2012.06-SP5/libraries/syn/gtech.db'
+Loading db file '/tools/synopsys/syn_vG-2012.06-SP5/libraries/syn/standard.sldb'
+  Loading link library 'cb13fs120_tsmc_max'
+  Loading link library 'cb13io320_tsmc_max'
+  Loading link library 'cb13special_max'
+  Loading link library 'ram16x128_max'
+  Loading link library 'ram4x32_max'
+  Loading link library 'ram8x64_max'
+  Loading link library 'ram32x64_max'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Inferred tri-state devices in process
+        in routine iic_top line 1197 in file
+                '../rtl_new/iic_all.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+|  net_sda_tri  | Tri-State Buffer |   1   | N  |
+=================================================
+
+Inferred tri-state devices in process
+        in routine iic_top line 1198 in file
+                '../rtl_new/iic_all.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+| net_sda_o_tri | Tri-State Buffer |   1   | N  |
+=================================================
+Presto compilation completed successfully.
+Elaborated 1 design.
+Current design is now 'iic_top'.
+Information: Building the design 'iic'. (HDL-193)
+
+Statistics for case statements in always block at line 154 in file
+        '../rtl_new/iic_all.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           160            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 224 in file
+        '../rtl_new/iic_all.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           242            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 362 in file
+        '../rtl_new/iic_all.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           372            |    auto/auto     |
+===============================================
+
+Statistics for case statements in always block at line 392 in file
+        '../rtl_new/iic_all.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           417            |    auto/auto     |
+|           487            |    auto/auto     |
+|           553            |    auto/auto     |
+|           772            |    auto/auto     |
+|           834            |    auto/auto     |
+|           894            |    auto/auto     |
+|           968            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine iic line 144 in file
+                '../rtl_new/iic_all.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    cnt_delay_reg    | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine iic line 154 in file
+                '../rtl_new/iic_all.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|       cnt_reg       | Flip-flop |   2   |  Y  | N  | N  | Y  | N  | N  | N  |
+|       cnt_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine iic line 194 in file
+                '../rtl_new/iic_all.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      scl_r_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine iic line 224 in file
+                '../rtl_new/iic_all.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   WRITE_DATA1_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   WRITE_DATA4_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   WRITE_DATA3_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   WRITE_DATA2_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    BYTE_ADDR_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     DEVICE_reg      | Flip-flop |   7   |  Y  | N  | Y  | N  | N  | N  | N  |
+|  PAGEDATA_NUM_reg   | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   WRITE_DATA0_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine iic line 362 in file
+                '../rtl_new/iic_all.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|   pagedata_r_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine iic line 392 in file
+                '../rtl_new/iic_all.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      db_r_reg       | Flip-flop |   8   |  Y  | N  | N  | N  | N  | N  | N  |
+|     ackflag_reg     | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    read_data_reg    | Flip-flop |   8   |  N  | N  | Y  | N  | N  | N  | N  |
+|       num_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      sda_r_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|  DEVICE_WRITE_reg   | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     cstate_reg      | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     cstate_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|    outdata_r_reg    | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     pagecnt_reg     | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    sda_link_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred tri-state devices in process
+        in routine iic line 1108 in file
+                '../rtl_new/iic_all.v'.
+=================================================
+| Register Name |       Type       | Width | MB |
+=================================================
+|    sda_tri    | Tri-State Buffer |   1   | N  |
+=================================================
+Presto compilation completed successfully.
+Current design is 'iic_top'.
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (2 designs)               /home/stu23/sorin/ic_project_lab/synthesis/iic_top.db, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+Current design is 'iic_top'.
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (2 designs)               /home/stu23/sorin/ic_project_lab/synthesis/iic_top.db, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | G-2012.06-DWBB_201206.4 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 15 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'iic'
+Information: The register 'cstate_reg[6]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cstate_reg[7]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cstate_reg[8]' is a constant and will be removed. (OPT-1206)
+Information: The register 'cstate_reg[15]' is a constant and will be removed. (OPT-1206)
+  Processing 'iic_top'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'iic_DW01_inc_0'
+  Processing 'iic_DW01_cmp6_0'
+  Processing 'iic_DW01_dec_0'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Warning: Cannot perform multibit optimization on 'cell' 'sda_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'scl_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'ackflag_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'ackflag_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'ackflag_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_7'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_6'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_5'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_4'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_3'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'outdata_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw4_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw3_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw2_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'sw1_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'addr_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'addr_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'addr_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_7'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_6'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_5'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_4'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_3'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_2'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_1'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'IDAT_pad_0'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'REG_WR_pad'. (OPT-915)
+Warning: Cannot perform multibit optimization on 'cell' 'rst_n_pad'. (OPT-915)
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04  108228.0      0.00       0.0   14812.7                          
+    0:00:04  108228.0      0.00       0.0   14812.7                          
+    0:00:04  108228.0      0.00       0.0   14812.7                          
+    0:00:04  108228.0      0.00       0.0   14812.7                          
+    0:00:04  108228.0      0.00       0.0   14812.7                          
+    0:00:04  108228.0      0.00       0.0   14812.7                          
+    0:00:04  108064.6      0.00       0.0   14812.7                          
+    0:00:04  108064.6      0.00       0.0   14812.7                          
+    0:00:04  108064.6      0.00       0.0   14812.7                          
+    0:00:04  108064.6      0.00       0.0   14812.7                          
+    0:00:04  108064.6      0.00       0.0   14812.7                          
+    0:00:04  108065.9      0.00       0.0   14703.3                          
+    0:00:04  108067.6      0.00       0.0   14689.6                          
+    0:00:04  108067.6      0.00       0.0   14689.6                          
+    0:00:04  108067.6      0.00       0.0   14689.6                          
+    0:00:04  108067.6      0.00       0.0   14689.6                          
+    0:00:04  108067.6      0.00       0.0   14689.6                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:04  108067.6      0.00       0.0   14689.6                          
+    0:00:04  108067.6      0.00       0.0   14689.6                          
+    0:00:05  108009.0      0.00       0.0   14842.9                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_fanout)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:05  108009.0      0.00       0.0   14842.9                          
+    0:00:05  108012.2      0.00       0.0   14689.6                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+                                  TOTAL                                      
+   ELAPSED            WORST NEG   SETUP    DESIGN                            
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:05  108012.2      0.00       0.0   14689.6                          
+    0:00:05  108012.2      0.00       0.0   14689.6                          
+    0:00:05  108012.2      0.00       0.0   14689.6                          
+    0:00:05  108010.5      0.00       0.0   14689.6                          
+    0:00:05  108010.5      0.00       0.0   14689.6                          
+    0:00:05  108010.5      0.00       0.0   14689.6                          
+    0:00:05  108010.5      0.00       0.0   14689.6                          
+    0:00:05  108010.5      0.00       0.0   14689.6                          
+    0:00:05  108010.5      0.00       0.0   14689.6                          
+    0:00:05  108010.5      0.00       0.0   14689.6                          
+    0:00:05  108010.5      0.00       0.0   14689.6                          
+    0:00:05  108010.5      0.00       0.0   14689.6                          
+    0:00:05  108010.5      0.00       0.0   14689.6                          
+    0:00:05  108010.5      0.00       0.0   14689.6                          
+    0:00:05  108010.5      0.00       0.0   14689.6                          
+    0:00:05  108010.5      0.00       0.0   14689.6                          
+    0:00:05  108010.5      0.00       0.0   14689.6                          
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db'
+
+  Optimization Complete
+  ---------------------
+Writing verilog file '/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v'.
+1
+Current design is 'iic_top'.
+design_vision> 

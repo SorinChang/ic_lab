@@ -1,0 +1,24 @@
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_min.db'
+Initializing gui preferences from file  /home/stu23/.synopsys_icc_prefs.tcl
+icc_shell> gui_start
+Information: Visibility is turned ON for cells and cell contents because the task is set to Block Implementation (GUI-026)
+icc_shell> open_mw_lib /home/stu23/sorin/ic_project_lab/layout/iic.mw
+{iic.mw}
+icc_shell> open_mw_cel iic_cts
+Preparing data for query................... 
+Information: Opened "iic_cts.CEL;1" from "/home/stu23/sorin/ic_project_lab/layout/iic.mw" library. (MWUI-068)
+icc_shell> 
+Exit IC Compiler!

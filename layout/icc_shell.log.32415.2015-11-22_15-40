@@ -1,0 +1,594 @@
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_min.db'
+Initializing gui preferences from file  /home/stu23/.synopsys_icc_prefs.tcl
+icc_shell> start_gui
+Information: Visibility is turned ON for cells and cell contents because the task is set to Block Implementation (GUI-026)
+icc_shell> create_mw_lib  -technology $tech_file -mw_reference_library {/home/stu23/sorin/ic_project_lab/ref/mw_lib/io /home/stu23/sorin/ic_project_lab/ref/mw_lib/sc} -bus_naming_style {[%d]}  $my_mw_lib
+Start to load technology file ../ref/tech/cb13_6m.tf.
+Warning: Layer 'PRODUM' is missing the attribute 'minSpacing'. (line 312) (TFCHK-014)
+Warning: Layer 'PRODUM' is missing the attribute 'minWidth'. (line 312) (TFCHK-014)
+Technology file ../ref/tech/cb13_6m.tf has been loaded successfully.
+icc_shell> echo $tech_file
+../ref/tech/cb13_6m.tf
+icc_shell> set_tlu_plus_files -max_tluplus /home/stu23/sorin/ic_project_lab/ref/tlup/cb13_6m_max.tluplus -min_tluplus /home/stu23/sorin/ic_project_lab/ref/tlup/cb13_6m_min.tluplus -tech2itf_map  /home/stu23/sorin/ic_project_lab/ref/tlup/cb13_6m.map
+1
+icc_shell> import_designs -format verilog -top iic_top -cel iic_top {/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v}
+Error: No Milkyway library is open. (UID-666)
+0
+icc_shell> current_mw_lib IIC.mw
+Error: extra positional option 'IIC.mw' (CMD-012)
+icc_shell> current_mw_lib
+Error: No current milkyway library. (MWUI-003)
+icc_shell> open_mw_lib /home/stu23/sorin/ic_project_lab/layout/iic.mw/
+{iic.mw}
+icc_shell> import_designs -format verilog -top iic_top -cel iic_top {/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v}
+Loading db file '/tools/synopsys/icc_vG-2012.06-SP5/libraries/syn/gtech.db'
+Loading db file '/tools/synopsys/icc_vG-2012.06-SP5/libraries/syn/standard.sldb'
+Type of creating bus for undefined cells : 0
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 1 *****
+Warning: Lineno 18, change net type from TRI to Wire. (MWNL-117)
+Warning: Lineno 19, change net type from TRI to Wire. (MWNL-117)
+
+*****  Pass 1 Complete *****
+Elapsed =    0:00:00, CPU =    0:00:00
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 2 *****
+Warning: Lineno 18, change net type from TRI to Wire. (MWNL-117)
+Warning: Lineno 19, change net type from TRI to Wire. (MWNL-117)
+Error: Module 'iic' is not defined.  (MWNL-297)
+Error: Verilog parser cannot parse the /home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v source file. (MWNL-047)
+Error: Current design is not defined. (UID-4)
+0
+icc_shell> import_designs -format verilog -top iic -cel iic {/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v}Type of creating bus for undefined cells : 0
+
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 1 *****
+Warning: Lineno 18, change net type from TRI to Wire. (MWNL-117)
+Warning: Lineno 19, change net type from TRI to Wire. (MWNL-117)
+
+*****  Pass 1 Complete *****
+Elapsed =    0:00:00, CPU =    0:00:00
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 2 *****
+Warning: Lineno 18, change net type from TRI to Wire. (MWNL-117)
+Warning: Lineno 19, change net type from TRI to Wire. (MWNL-117)
+Error: Module 'iic' is not defined.  (MWNL-297)
+Error: Verilog parser cannot parse the /home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v source file. (MWNL-047)
+Error: Current design is not defined. (UID-4)
+0
+icc_shell> current_mw_lib
+{iic.mw}
+icc_shell> current_design
+Error: Current design is not defined. (UID-4)
+icc_shell> import_designs -format verilog -top iic_top -cel iic_top {/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v}Type of creating bus for undefined cells : 0
+
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 1 *****
+Warning: Lineno 18, change net type from TRI to Wire. (MWNL-117)
+Warning: Lineno 19, change net type from TRI to Wire. (MWNL-117)
+
+*****  Pass 1 Complete *****
+Elapsed =    0:00:00, CPU =    0:00:00
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 2 *****
+Warning: Lineno 18, change net type from TRI to Wire. (MWNL-117)
+Warning: Lineno 19, change net type from TRI to Wire. (MWNL-117)
+Error: Module 'iic' is not defined.  (MWNL-297)
+Error: Verilog parser cannot parse the /home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v source file. (MWNL-047)
+Error: Current design is not defined. (UID-4)
+0
+icc_shell> close_mw_lib
+icc_shell> start_gui
+icc_shell> open_mw_lib /home/stu23/sorin/ic_project_lab/layout/iic.mw/
+{iic.mw}
+icc_shell> import_designs -format verilog -top iic_top -cel iic_top {/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v}Type of creating bus for undefined cells : 0
+
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 1 *****
+Warning: Lineno 18, change net type from TRI to Wire. (MWNL-117)
+Warning: Lineno 19, change net type from TRI to Wire. (MWNL-117)
+
+*****  Pass 1 Complete *****
+Elapsed =    0:00:00, CPU =    0:00:00
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 2 *****
+Warning: Lineno 18, change net type from TRI to Wire. (MWNL-117)
+Warning: Lineno 19, change net type from TRI to Wire. (MWNL-117)
+Error: Module 'iic' is not defined.  (MWNL-297)
+Error: Verilog parser cannot parse the /home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v source file. (MWNL-047)
+Error: Current design is not defined. (UID-4)
+0
+icc_shell> import_designs -format verilog -top iic_top -cel iic_top {/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v}Type of creating bus for undefined cells : 0
+
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 1 *****
+Warning: Lineno 18, change net type from TRI to Wire. (MWNL-117)
+Warning: Lineno 19, change net type from TRI to Wire. (MWNL-117)
+
+*****  Pass 1 Complete *****
+Elapsed =    0:00:00, CPU =    0:00:00
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 2 *****
+Warning: Lineno 18, change net type from TRI to Wire. (MWNL-117)
+Warning: Lineno 19, change net type from TRI to Wire. (MWNL-117)
+Error: Module 'iic' is not defined.  (MWNL-297)
+Error: Verilog parser cannot parse the /home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v source file. (MWNL-047)
+Error: Current design is not defined. (UID-4)
+0
+icc_shell> import_designs -format verilog -top iic_top -cel iic_top {/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v}Type of creating bus for undefined cells : 0
+
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 1 *****
+Warning: Lineno 713, change net type from TRI to Wire. (MWNL-117)
+Warning: Lineno 714, change net type from TRI to Wire. (MWNL-117)
+
+*****  Pass 1 Complete *****
+Elapsed =    0:00:00, CPU =    0:00:00
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 2 *****
+Warning: Lineno 713, change net type from TRI to Wire. (MWNL-117)
+Warning: Lineno 714, change net type from TRI to Wire. (MWNL-117)
+
+*****  Pass 2 Complete *****
+
+*****   Verilog HDL translation completed! *****
+Elapsed =    0:00:00, CPU =    0:00:00
+Hierarchy Preservation is turned ON
+The quick-attach skip-search mode has been turned on.
+  Start axu naming escaping style change ...
+  End axu naming escaping style change, status is 1
+Checking single pin net for cell 'iic_top.CEL' now...
+Total number of cell instances: 513
+Total number of nets: 553
+Total number of ports: 31 (include 0 PG ports)
+Total number of hierarchical cell instances: 3
+
+The quick-attach skip-search mode has been turned off.
+INFO:  total find 0 pg nets connected with tie net.
+Elapsed =    0:00:00, CPU =    0:00:00
+Preparing data for query................... 
+Information: Read verilog completed successfully.
+1
+icc_shell> check_tlu_plus_files
+Information: linking reference library : /home/stu23/sorin/ic_project_lab/ref/mw_lib/io. (PSYN-878)
+Information: linking reference library : /home/stu23/sorin/ic_project_lab/ref/mw_lib/sc. (PSYN-878)
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               iic_top.CEL, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+Load global CTS reference options from NID to stack
+# GUI Debug: Building dc from empty. -- Time: 952ms
+
+Sanity check for TLU+ vs MW-Tech files:
+ max_tlu+: /home/stu23/sorin/ic_project_lab/ref/tlup/cb13_6m_max.tluplus
+ min_tlu+: /home/stu23/sorin/ic_project_lab/ref/tlup/cb13_6m_min.tluplus
+ mapping_file: /home/stu23/sorin/ic_project_lab/ref/tlup/cb13_6m.map
+ max_emul_tlu+: **NONE**
+ min_emul_tlu+: **NONE**
+ MW design lib: iic.mw
+
+--------- Sanity Check on TLUPlus Files -------------
+1. Checking the conducting layer names in ITF and mapping file ... 
+[ Passed! ]
+2. Checking the via layer names in ITF and mapping file ... 
+[ Passed! ]
+3. Checking the consistency of Min Width and Min Spacing between MW-tech and ITF ... 
+[ Passed! ]
+----------------- Check Ends ------------------
+1
+icc_shell> source ./scripts/connect_pg.tcl
+Information: connected 513 power ports and 513 ground ports
+Information: connected 31 power ports and 31 ground ports
+Information: connected 31 power ports and 31 ground ports
+reconnected total 0 tie highs and 0 tie lows
+1
+icc_shell> check_mv_design -power_nets
+Information: linking reference library : /home/stu23/sorin/ic_project_lab/ref/mw_lib/io. (PSYN-878)
+Information: linking reference library : /home/stu23/sorin/ic_project_lab/ref/mw_lib/sc. (PSYN-878)
+Warning: Could not find a valid driver for the hierarchical Ground net 'VSS'. (MWDC-285)
+Warning: Could not find a valid driver for the hierarchical Power net 'VDD'. (MWDC-285)
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               iic_top.CEL, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+Load global CTS reference options from NID to stack
+# GUI Debug: Building dc for netlist invalid. -- Time: 189ms
+--------------------------------------------------------------------------------
+       Power/Ground Pin Connection Checks
+--------------------------------------------------------------------------------
+
+Power/Ground Connection Summary:
+
+P/G net name                P/G pin count
+--------------------------------------------------------------------
+Other power nets:                 575
+Unconnected power pins:           0
+
+Other ground nets:                575
+Unconnected ground pins:          0
+--------------------------------------------------------------------
+Warning: Power connection/checking is skipped for 1150 power pins because the required power pin information cannot be found in logical libraries. (MV-510)
+
+--------------------------------------------------------------------------------
+       Supply Operating Voltage Checks
+--------------------------------------------------------------------------------
+No Errors/Warnings Found.
+
+Please review report above for warnings and errors.
+1
+icc_shell> read_sdc ../synthesis/iic.sdc
+ Info: hierarchy_separator was changed to /
+
+Reading SDC version 1.9...
+Warning: Constraint 'set_wire_load_mode' is not supported by icc_shell. (SDC-3)
+
+
+Summary of unsupported constraints:
+Information: Ignored 1 unsupported 'set_wire_load_mode' constraint. (SDC-4)
+ Info: hierarchy_separator was changed to /
+1
+icc_shell> check_timing
+Information: Updating graph... (UID-83)
+Information: Updating design information... (UID-85)
+
+Information: Checking generated_clocks...
+
+Information: Checking loops...
+
+Information: Checking no_input_delay...
+
+Information: Checking unconstrained_endpoints...
+
+Information: Checking pulse_clock_cell_type...
+
+Information: Checking no_driving_cell...
+
+Information: Checking partial_input_delay...
+Warning: there are 18 input ports that only have partial input delay specified. (TIM-212)
+--------------------
+IDAT[6]
+IDAT[5]
+IDAT[4]
+IDAT[3]
+IDAT[2]
+IDAT[1]
+IDAT[0]
+addr[2]
+addr[1]
+addr[0]
+IDAT[7]
+sda
+sw4
+sw3
+sw2
+sw1
+REG_WR
+rst_n
+1
+icc_shell> report_clock
+ 
+****************************************
+Report : clocks
+Design : iic_top
+Version: G-2012.06-ICC-SP5
+Date   : Sun Nov 22 16:11:23 2015
+****************************************
+
+Attributes:
+    d - dont_touch_network
+    f - fix_hold
+    p - propagated_clock
+    G - generated_clock
+    g - lib_generated_clock
+
+Clock          Period   Waveform            Attrs     Sources
+--------------------------------------------------------------------------------
+clk             10.00   {0 5}                         {clk}
+--------------------------------------------------------------------------------
+1
+icc_shell> source ./scripts/opt_ctrl.tcl
+icc_shell> current_design
+Current design is 'iic_top'.
+{iic_top}
+icc_shell> create_floorplan -core_utilization 0.8 -left_io2core 30 -bottom_io2core 30 -right_io2core 30 -top_io2core 30
+0 pads are constrained in TDF table
+There are 31 IO pads 0 corner pads in total
+Start to create wire tracks ...
+GRC reference (371875,371875), dimensions (3690, 3690)
+Start to place pads/pins ...
+Information: The orientation of Library cell "pc3b03" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3o05" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3d01" is "E". (APLUI-043)
+There are 0 pads constrained by min IO spacing.
+Top core spacing increased, pad limited.
+Right core spacing increased, pad limited.
+
+Running IO Placement Refinement...
+
+IO Placement Refinement Completed Successfully.
+
+Place pads/pins successfully
+Increase Left/Right to core distance by 0.11
+Pad Limited detected in Bottom/Top sides.
+Enlarge core width to 480.11 by 371.46
+Increase Bottom/Top to core distance by 0.39
+Pad Limited detected in Left/Right sides.
+Enlarge core height to 360.39 by 253.38
+Core aspect ratio adjusted to 0.746
+Core Utilization adjusted to 0.055
+Pad limited detected. Try fixed die size floor plan ...
+Start to create wire tracks ...
+GRC reference (371875,371875), dimensions (3690, 3690)
+Start to place pads/pins ...
+Information: The orientation of Library cell "pc3b03" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3o05" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3d01" is "E". (APLUI-043)
+There are 0 pads constrained by min IO spacing.
+Right core spacing increased, pad limited.
+
+Running IO Placement Refinement...
+
+IO Placement Refinement Completed Successfully.
+
+Place pads/pins successfully
+Increase Left/Right to core distance by 0.38
+Pad Limited detected in Bottom/Top sides.
+Enlarge core width to 540.38 by 60.27
+Core aspect ratio adjusted to 0.662
+Core Utilization adjusted to 0.049
+Pad limited detected. Try fixed die size floor plan ...
+Start to create wire tracks ...
+GRC reference (371875,371875), dimensions (3690, 3690)
+Start to place pads/pins ...
+Information: The orientation of Library cell "pc3b03" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3o05" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3d01" is "E". (APLUI-043)
+There are 0 pads constrained by min IO spacing.
+
+Running IO Placement Refinement...
+
+IO Placement Refinement Completed Successfully.
+
+Place pads/pins successfully
+Warning: Pin constraints not found for top block.  Default pin constraints are saved. (FPHSM-0010)
+Warning: Cell instance iic_instance/cnt_reg[1] is not completely placed inside top block iic_top (FPHSM-1800)
+Warning: Current cell: cell placement is incomplete and will be ignored (FPHSM-1829)
+Warning: Pad cells edges are now open for terminal placement (FPHSM-0019)
+Information: During terminal creation, some port-connected pins were detected as possible or likely candidates to be a PAD-type pin.  A tcl script, set_pad_attributes_on_cell_iic_top.tcl, has been created with a set_attribute command for each possible pin candidate. Some pins in this script may not actually be PAD-type pins.  Please edit this fileand correct any lines which are not correctly setting the value (true or false).  Then source this tcl script and then re-run the command which produced this message (place_fp_pins, initialize_floorplan, or initialize_rectilinear_block) again so that terminals are correctly processed.  The command has assumed that all candidate pins which are on padcells or bumpcells are to have terminals stacked onto the corresponding pins.  It has also assumed that all candidate pins which are on hard macros are to to have terminals created on the cell boundary.  If you are happy with these assumptions, you may forego the sourcing of the generated script and just accept the initial results .  If that does not give you satisfactory results, then use set_pin_physical_constraints to explicitly specify terminal locations. (FPHSM-1854)
+Number of terminals created: 31.
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Name      Original Ports
+iic_top               31
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Completed pin assignment.
+Elapsed =    0:00:01, CPU =    0:00:00
+Planner Summary:
+This floorplan is created by using tile name (unit).
+        Row Direction = HORIZONTAL
+        Control Parameter =  Width & Height
+        Core Utilization = 0.049
+        Number Of Rows = 97
+        Core Width = 540.38
+        Core Height = 357.93
+        Aspect Ratio = 0.662
+        Double Back ON
+        Flip First Row = NO
+        Start From First Row = NO
+Planner run through successfully.
+1
+icc_shell> read_pin_pad_physical_constraints /home/stu23/sorin/ic_project_lab/layout/scripts/pad_cell_cons.tcl
+Error: Failed to load io constraints because only commands of set_pin_physical_constraints and set_pad_physical_constraints are allowed in io constraints file.
+ (HDU-099)
+0
+icc_shell> read_pin_pad_physical_constraints /home/stu23/sorin/ic_project_lab/layout/scripts/pad_cell_cons.tcl
+Error: Failed to load io constraints because only commands of set_pin_physical_constraints and set_pad_physical_constraints are allowed in io constraints file.
+ (HDU-099)
+0
+icc_shell> create_floorplan -left_io2core 20 -right_io2core 20 -top_io2core 20 -bottom_io2core 20 -core_height 100 -core_width 100 -start_first_row -keep_io_place -core_utilization 50
+0 pads are constrained in TDF table
+There are 31 IO pads 0 corner pads in total
+Core Utilization 50.000 is too big (max = 1.0)
+Start to create wire tracks ...
+GRC reference (361875,361875), dimensions (3690, 3690)
+Start to place pads/pins ...
+Info: all the IO pins are purged, since both pad and pin exist.
+Information: The orientation of Library cell "pc3b03" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3o05" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3d01" is "E". (APLUI-043)
+There are 0 pads constrained by min IO spacing.
+Top core spacing increased, pad limited.
+Right core spacing increased, pad limited.
+
+Running IO Placement Refinement...
+
+IO Placement Refinement Completed Successfully.
+
+Place pads/pins successfully
+Increase Left/Right to core distance by 0.2
+Pad Limited detected in Bottom/Top sides.
+Enlarge core width to 500.2 by 403.03
+Increase Bottom/Top to core distance by 0.07
+Pad Limited detected in Left/Right sides.
+Enlarge core height to 380.07 by 284.13
+Core Utilization 1.017 is too big (max = 1.0)
+Core aspect ratio adjusted to 0.760
+Core Utilization adjusted to 0.050
+Pad limited detected. Try fixed die size floor plan ...
+Start to create wire tracks ...
+GRC reference (361875,361875), dimensions (3690, 3690)
+Start to place pads/pins ...
+Information: The orientation of Library cell "pc3b03" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3o05" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3d01" is "E". (APLUI-043)
+There are 0 pads constrained by min IO spacing.
+Right core spacing increased, pad limited.
+
+Running IO Placement Refinement...
+
+IO Placement Refinement Completed Successfully.
+
+Place pads/pins successfully
+Increase Left/Right to core distance by 0.06
+Pad Limited detected in Bottom/Top sides.
+Enlarge core width to 560.06 by 59.86
+Core aspect ratio adjusted to 0.679
+Core Utilization adjusted to 0.045
+Pad limited detected. Try fixed die size floor plan ...
+Start to create wire tracks ...
+GRC reference (361875,361875), dimensions (3690, 3690)
+Start to place pads/pins ...
+Information: The orientation of Library cell "pc3b03" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3o05" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3d01" is "E". (APLUI-043)
+There are 0 pads constrained by min IO spacing.
+
+Running IO Placement Refinement...
+
+IO Placement Refinement Completed Successfully.
+
+Place pads/pins successfully
+Warning: Cell instance iic_instance/cnt_reg[1] is not completely placed inside top block iic_top (FPHSM-1800)
+Warning: Current cell: cell placement is incomplete and will be ignored (FPHSM-1829)
+Warning: Pad cells edges are now open for terminal placement (FPHSM-0019)
+Information: During terminal creation, some port-connected pins were detected as possible or likely candidates to be a PAD-type pin.  A tcl script, set_pad_attributes_on_cell_iic_top.tcl, has been created with a set_attribute command for each possible pin candidate. Some pins in this script may not actually be PAD-type pins.  Please edit this fileand correct any lines which are not correctly setting the value (true or false).  Then source this tcl script and then re-run the command which produced this message (place_fp_pins, initialize_floorplan, or initialize_rectilinear_block) again so that terminals are correctly processed.  The command has assumed that all candidate pins which are on padcells or bumpcells are to have terminals stacked onto the corresponding pins.  It has also assumed that all candidate pins which are on hard macros are to to have terminals created on the cell boundary.  If you are happy with these assumptions, you may forego the sourcing of the generated script and just accept the initial results .  If that does not give you satisfactory results, then use set_pin_physical_constraints to explicitly specify terminal locations. (FPHSM-1854)
+Number of terminals created: 31.
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Name      Original Ports
+iic_top               31
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Completed pin assignment.
+Elapsed =    0:00:00, CPU =    0:00:00
+Planner Summary:
+This floorplan is created by using tile name (unit).
+        Row Direction = HORIZONTAL
+        Control Parameter =  Width & Height
+        Core Utilization = 0.045
+        Number Of Rows = 103
+        Core Width = 560.06
+        Core Height = 380.07
+        Aspect Ratio = 0.679
+        Double Back ON
+        Flip First Row = NO
+        Start From First Row = YES
+Planner run through successfully.
+1
+icc_shell> source ./scripts/connect_pg.tcl
+Information: connected 0 power ports and 0 ground ports
+Information: connected 0 power ports and 0 ground ports
+Information: connected 0 power ports and 0 ground ports
+reconnected total 0 tie highs and 0 tie lows
+1
+icc_shell> source ./scripts/opt_ctrl.tcl
+Information: linking reference library : /home/stu23/sorin/ic_project_lab/ref/mw_lib/io. (PSYN-878)
+Information: linking reference library : /home/stu23/sorin/ic_project_lab/ref/mw_lib/sc. (PSYN-878)
+Warning: Could not find a valid driver for the hierarchical Ground net 'VSS'. (MWDC-285)
+Warning: Could not find a valid driver for the hierarchical Power net 'VDD'. (MWDC-285)
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               iic_top.CEL, etc
+  cb13fs120_tsmc_max (library)
+                              /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library)
+                              /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+Load global CTS reference options from NID to stack
+# GUI Debug: Building dc from empty. -- Time: 179ms
+Information: The design has horizontal rows, and Y-symmetry has been used for sites. (MWDC-217)
+Floorplan loading succeeded.
+Information: Updating graph... (UID-83)
+icc_shell> source ./scripts/pad_cell_cons.tcl
+Creating cell 'cornerll' in design 'iic_top'.
+Creating cell 'cornerlr' in design 'iic_top'.
+Creating cell 'cornerul' in design 'iic_top'.
+Creating cell 'cornerur' in design 'iic_top'.
+Warning: Library cell matching constraints can not be found. Library cell from the library cb13io320_tsmc_max is being used (UIED-89)
+Creating cell 'vss1left' in design 'iic_top'.
+Creating cell 'vss1right' in design 'iic_top'.
+Creating cell 'vss1top' in design 'iic_top'.
+Creating cell 'vss1bottom' in design 'iic_top'.
+Warning: Library cell matching constraints can not be found. Library cell from the library cb13io320_tsmc_max is being used (UIED-89)
+Creating cell 'vdd1left' in design 'iic_top'.
+Creating cell 'vdd1right' in design 'iic_top'.
+Creating cell 'vdd1top' in design 'iic_top'.
+Creating cell 'vdd1bottom' in design 'iic_top'.
+Warning: Library cell matching constraints can not be found. Library cell from the library cb13io320_tsmc_max is being used (UIED-89)
+Creating cell 'vss2left' in design 'iic_top'.
+Creating cell 'vss2right' in design 'iic_top'.
+Creating cell 'vss2top' in design 'iic_top'.
+Creating cell 'vss2bottom' in design 'iic_top'.
+Warning: Library cell matching constraints can not be found. Library cell from the library cb13io320_tsmc_max is being used (UIED-89)
+Creating cell 'vdd2left' in design 'iic_top'.
+Creating cell 'vdd2right' in design 'iic_top'.
+Creating cell 'vdd2top' in design 'iic_top'.
+Creating cell 'vdd2bottom' in design 'iic_top'.
+1
+icc_shell> quit
+
+Memory usage for main task 246 Mbytes.
+Memory usage for this session 246 Mbytes.
+CPU usage for this session 30 seconds ( 0.01 hours ).
+
+Thank you...
+

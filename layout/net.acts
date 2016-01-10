@@ -1,0 +1,5 @@
+clk
+net_clk
+iic_instance/clk
+iic_instance/net_clk_G2B1I1
+iic_instance/net_clk_G2B1I2

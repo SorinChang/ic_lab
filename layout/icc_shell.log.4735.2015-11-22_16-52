@@ -1,0 +1,1231 @@
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/sc_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/io_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/special_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram16x128_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram4x32_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram8x64_min.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db'
+Loading db file '/home/stu23/sorin/ic_project_lab/ref/db/ram32x64_min.db'
+Initializing gui preferences from file  /home/stu23/.synopsys_icc_prefs.tcl
+icc_shell> start_gui
+Information: Visibility is turned ON for cells and cell contents because the task is set to Block Implementation (GUI-026)
+icc_shell> open_mw_lib /home/stu23/sorin/ic_project_lab/layout/iic.mw/
+{iic.mw}
+icc_shell> import_designs -format verilog -top iic_top -cel iic_top {/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v}
+Loading db file '/tools/synopsys/icc_vG-2012.06-SP5/libraries/syn/gtech.db'
+Loading db file '/tools/synopsys/icc_vG-2012.06-SP5/libraries/syn/standard.sldb'
+Type of creating bus for undefined cells : 0
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 1 *****
+Warning: Lineno 713, change net type from TRI to Wire. (MWNL-117)
+Warning: Lineno 714, change net type from TRI to Wire. (MWNL-117)
+
+*****  Pass 1 Complete *****
+Elapsed =    0:00:00, CPU =    0:00:00
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 2 *****
+Warning: Lineno 713, change net type from TRI to Wire. (MWNL-117)
+Warning: Lineno 714, change net type from TRI to Wire. (MWNL-117)
+
+*****  Pass 2 Complete *****
+
+*****   Verilog HDL translation completed! *****
+Elapsed =    0:00:00, CPU =    0:00:00
+Hierarchy Preservation is turned ON
+The quick-attach skip-search mode has been turned on.
+  Start axu naming escaping style change ...
+  End axu naming escaping style change, status is 1
+Checking single pin net for cell 'iic_top.CEL' now...
+Total number of cell instances: 513
+Total number of nets: 553
+Total number of ports: 31 (include 0 PG ports)
+Total number of hierarchical cell instances: 3
+
+The quick-attach skip-search mode has been turned off.
+INFO:  total find 0 pg nets connected with tie net.
+Elapsed =    0:00:00, CPU =    0:00:00
+Preparing data for query................... 
+Information: Read verilog completed successfully.
+1
+icc_shell> source scripts/opt_ctrl.tcl
+Information: linking reference library : /home/stu23/sorin/ic_project_lab/ref/mw_lib/io. (PSYN-878)
+Information: linking reference library : /home/stu23/sorin/ic_project_lab/ref/mw_lib/sc. (PSYN-878)
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               iic_top.CEL, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+Load global CTS reference options from NID to stack
+# GUI Debug: Building dc from empty. -- Time: 954ms
+Information: Updating graph... (UID-83)
+No sources.
+Error: Value for list 'object_list' must have 1 elements. (CMD-036)
+icc_shell> current_design
+Current design is 'iic_top'.
+{iic_top}
+icc_shell> check_library
+
+#BEGIN_XCHECK_LIBRARY
+
+Logic Library:    cb13fs120_tsmc_max 
+                  cb13io320_tsmc_max 
+                  cb13special_max 
+                  ram16x128_max 
+                  ram4x32_max 
+                  ram8x64_max 
+                  ram32x64_max 
+Physical Library: /home/stu23/sorin/ic_project_lab/ref/mw_lib/io 
+                  /home/stu23/sorin/ic_project_lab/ref/mw_lib/sc 
+check_library options:  
+Version:                                G-2012.06-ICC-SP5
+Check date and time:    Sun Nov 22 16:55:39 2015
+
+          List of logic library and file names
+------------------------------------------------------------------------------
+Logic library name           Logic library file name
+------------------------------------------------------------------------------
+cb13fs120_tsmc_max           /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+cb13io320_tsmc_max           /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+cb13special_max              /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+ram16x128_max                /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+ram4x32_max                  /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+ram8x64_max                  /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+ram32x64_max                 /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+------------------------------------------------------------------------------
+
+#BEGIN_XCHECK_LOGICCELLS
+
+Number of cells missing in logic library:       19 (out of 629)
+
+Information: List of cells missing in logic library (LIBCHK-210)
+-------------------------------------------------------------------------
+Cell name                  Cell type             Physical library
+-------------------------------------------------------------------------
+pfeed00005                 Pad                   io
+pfeed00010                 Pad                   io
+pfeed00050                 Pad                   io
+pfeed00100                 Pad                   io
+pfeed00200                 Pad                   io
+pfeed00500                 Pad                   io
+pfeed01000                 Pad                   io
+pfeed02000                 Pad                   io
+pfeed05000                 Pad                   io
+pfeed10000                 Pad                   io
+pfeedendringl              Pad                   io
+pfeedendringr              Pad                   io
+pfrelr                     Pad                   io
+pvce                       Pad                   io
+pvcf                       Pad                   io
+feedth3                    Core                  sc
+feedth9                    Core                  sc
+feedth                     Core                  sc
+tap                        Core                  sc
+-------------------------------------------------------------------------
+
+#END_XCHECK_LOGICCELLS
+
+#BEGIN_XCHECK_PHYSICALCELLS
+
+Number of cells missing in physical library:    6 (out of 642)
+
+Warning: List of cells missing in physical library (LIBCHK-211)
+-------------------------------------------------------------------------
+Cell name                  Cell type             Logic library
+-------------------------------------------------------------------------
+PLL                        non pad_cell          cb13special_max
+CLKMUL                     non pad_cell          cb13special_max
+ram16x128                  non pad_cell          ram16x128_max
+ram4x32                    non pad_cell          ram4x32_max
+ram8x64                    non pad_cell          ram8x64_max
+ram32x64                   non pad_cell          ram32x64_max
+-------------------------------------------------------------------------
+
+#END_XCHECK_PHYSICALCELLS
+
+#BEGIN_XCHECK_PINS
+
+Number of cells with missing or mismatched pins in libraries:   12
+
+Error: List of pins mismatched in logic and physical libraries (LIBCHK-213)
+Logic library:    cb13io320_tsmc_max
+Physical library: /home/stu23/sorin/ic_project_lab/ref/mw_lib/io
+-----------------------------------------------------------------------------------
+                                          Pin direction           Pin type
+Cell name                    Pin name    Logic   Physical     Logic         Physical
+-----------------------------------------------------------------------------------
+pv0a                         VSSO        output  Output      signal         ground
+pv0b                         VSS         output  Output      signal         ground
+pv0c                         VSSC        output  Output      signal         ground
+pv0d                         VSSQ        output  Output      signal         ground
+pv0e                         VSSO        output  Output      signal         ground
+pv0f                         VSS         output  Output      signal         ground
+pv0i                         VSS         output  Output      signal         ground
+pvda                         VDDO        output  Output      signal         power
+pvdc                         VDDC        output  Output      signal         power
+pvdd                         VDDQ        output  Output      signal         power
+pvde                         VDDO        output  Output      signal         power
+pvdi                         VDD         output  Output      signal         power
+-----------------------------------------------------------------------------------
+
+#END_XCHECK_PINS
+
+#BEGIN_XCHECK_CELLANTENNADIODETYPE
+
+Number of cells with inconsistent antenna_diode_type:   0
+
+#END_XCHECK_CELLANTENNADIODETYPE
+
+Logic vs. physical library check summary:
+Number of cells missing in logic library:       19 
+Number of cells missing in physical library:    6 
+Number of cells with missing or mismatched pins in libraries:   12
+Information: Logic library is INCONSISTENT with physical library (LIBCHK-220)
+
+#END_XCHECK_LIBRARY
+
+0
+icc_shell> set_tlu_plus_files -max_tluplus /home/stu23/sorin/ic_project_lab/ref/tlup/cb13_6m_max.tluplus -min_tluplus /home/stu23/sorin/ic_project_lab/ref/tlup/cb13_6m_min.tluplus -tech2itf_map  /home/stu23/sorin/ic_project_lab/ref/tlup/cb13_6m.map
+1
+icc_shell> check_library
+
+#BEGIN_XCHECK_LIBRARY
+
+Logic Library:    cb13fs120_tsmc_max 
+                  cb13io320_tsmc_max 
+                  cb13special_max 
+                  ram16x128_max 
+                  ram4x32_max 
+                  ram8x64_max 
+                  ram32x64_max 
+Physical Library: /home/stu23/sorin/ic_project_lab/ref/mw_lib/io 
+                  /home/stu23/sorin/ic_project_lab/ref/mw_lib/sc 
+check_library options:  
+Version:                                G-2012.06-ICC-SP5
+Check date and time:    Sun Nov 22 16:56:28 2015
+
+          List of logic library and file names
+------------------------------------------------------------------------------
+Logic library name           Logic library file name
+------------------------------------------------------------------------------
+cb13fs120_tsmc_max           /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+cb13io320_tsmc_max           /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+cb13special_max              /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+ram16x128_max                /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+ram4x32_max                  /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+ram8x64_max                  /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+ram32x64_max                 /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+------------------------------------------------------------------------------
+
+#BEGIN_XCHECK_LOGICCELLS
+
+Number of cells missing in logic library:       19 (out of 629)
+
+Information: List of cells missing in logic library (LIBCHK-210)
+-------------------------------------------------------------------------
+Cell name                  Cell type             Physical library
+-------------------------------------------------------------------------
+pfeed00005                 Pad                   io
+pfeed00010                 Pad                   io
+pfeed00050                 Pad                   io
+pfeed00100                 Pad                   io
+pfeed00200                 Pad                   io
+pfeed00500                 Pad                   io
+pfeed01000                 Pad                   io
+pfeed02000                 Pad                   io
+pfeed05000                 Pad                   io
+pfeed10000                 Pad                   io
+pfeedendringl              Pad                   io
+pfeedendringr              Pad                   io
+pfrelr                     Pad                   io
+pvce                       Pad                   io
+pvcf                       Pad                   io
+feedth3                    Core                  sc
+feedth9                    Core                  sc
+feedth                     Core                  sc
+tap                        Core                  sc
+-------------------------------------------------------------------------
+
+#END_XCHECK_LOGICCELLS
+
+#BEGIN_XCHECK_PHYSICALCELLS
+
+Number of cells missing in physical library:    6 (out of 642)
+
+Warning: List of cells missing in physical library (LIBCHK-211)
+-------------------------------------------------------------------------
+Cell name                  Cell type             Logic library
+-------------------------------------------------------------------------
+PLL                        non pad_cell          cb13special_max
+CLKMUL                     non pad_cell          cb13special_max
+ram16x128                  non pad_cell          ram16x128_max
+ram4x32                    non pad_cell          ram4x32_max
+ram8x64                    non pad_cell          ram8x64_max
+ram32x64                   non pad_cell          ram32x64_max
+-------------------------------------------------------------------------
+
+#END_XCHECK_PHYSICALCELLS
+
+#BEGIN_XCHECK_PINS
+
+Number of cells with missing or mismatched pins in libraries:   12
+
+Error: List of pins mismatched in logic and physical libraries (LIBCHK-213)
+Logic library:    cb13io320_tsmc_max
+Physical library: /home/stu23/sorin/ic_project_lab/ref/mw_lib/io
+-----------------------------------------------------------------------------------
+                                          Pin direction           Pin type
+Cell name                    Pin name    Logic   Physical     Logic         Physical
+-----------------------------------------------------------------------------------
+pv0a                         VSSO        output  Output      signal         ground
+pv0b                         VSS         output  Output      signal         ground
+pv0c                         VSSC        output  Output      signal         ground
+pv0d                         VSSQ        output  Output      signal         ground
+pv0e                         VSSO        output  Output      signal         ground
+pv0f                         VSS         output  Output      signal         ground
+pv0i                         VSS         output  Output      signal         ground
+pvda                         VDDO        output  Output      signal         power
+pvdc                         VDDC        output  Output      signal         power
+pvdd                         VDDQ        output  Output      signal         power
+pvde                         VDDO        output  Output      signal         power
+pvdi                         VDD         output  Output      signal         power
+-----------------------------------------------------------------------------------
+
+#END_XCHECK_PINS
+
+#BEGIN_XCHECK_CELLANTENNADIODETYPE
+
+Number of cells with inconsistent antenna_diode_type:   0
+
+#END_XCHECK_CELLANTENNADIODETYPE
+
+Logic vs. physical library check summary:
+Number of cells missing in logic library:       19 
+Number of cells missing in physical library:    6 
+Number of cells with missing or mismatched pins in libraries:   12
+Information: Logic library is INCONSISTENT with physical library (LIBCHK-220)
+
+#END_XCHECK_LIBRARY
+
+0
+icc_shell> list_libs
+Logical Libraries:
+-------------------------------------------------------------------------
+Library         File                    Path
+-------         ----                    ----
+M cb13fs120_tsmc_max sc_max.db          /home/stu23/sorin/ic_project_lab/ref/db
+m cb13fs120_tsmc_min sc_min.db          /home/stu23/sorin/ic_project_lab/ref/db
+M cb13io320_tsmc_max io_max.db          /home/stu23/sorin/ic_project_lab/ref/db
+m cb13io320_tsmc_min io_min.db          /home/stu23/sorin/ic_project_lab/ref/db
+M cb13special_max special_max.db                /home/stu23/sorin/ic_project_lab/ref/db
+m cb13special_min special_min.db                /home/stu23/sorin/ic_project_lab/ref/db
+M ram16x128_max ram16x128_max.db        /home/stu23/sorin/ic_project_lab/ref/db
+m ram16x128_min ram16x128_min.db        /home/stu23/sorin/ic_project_lab/ref/db
+M ram4x32_max   ram4x32_max.db          /home/stu23/sorin/ic_project_lab/ref/db
+m ram4x32_min   ram4x32_min.db          /home/stu23/sorin/ic_project_lab/ref/db
+M ram8x64_max   ram8x64_max.db          /home/stu23/sorin/ic_project_lab/ref/db
+m ram8x64_min   ram8x64_min.db          /home/stu23/sorin/ic_project_lab/ref/db
+M ram32x64_max  ram32x64_max.db         /home/stu23/sorin/ic_project_lab/ref/db
+m ram32x64_min  ram32x64_min.db         /home/stu23/sorin/ic_project_lab/ref/db
+  gtech         gtech.db                /tools/synopsys/icc_vG-2012.06-SP5/libraries/syn
+  standard.sldb standard.sldb           /tools/synopsys/icc_vG-2012.06-SP5/libraries/syn
+1
+icc_shell> source $derive_pg_files
+Error: can't read "derive_pg_files": no such variable
+        Use error_info for more info. (CMD-013)
+icc_shell> source scripts/connect_pg.tcl
+Information: connected 513 power ports and 513 ground ports
+Information: connected 31 power ports and 31 ground ports
+Information: connected 31 power ports and 31 ground ports
+reconnected total 0 tie highs and 0 tie lows
+1
+icc_shell> check_mv_design -power_nets
+Information: linking reference library : /home/stu23/sorin/ic_project_lab/ref/mw_lib/io. (PSYN-878)
+Information: linking reference library : /home/stu23/sorin/ic_project_lab/ref/mw_lib/sc. (PSYN-878)
+Warning: Could not find a valid driver for the hierarchical Ground net 'VSS'. (MWDC-285)
+Warning: Could not find a valid driver for the hierarchical Power net 'VDD'. (MWDC-285)
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               iic_top.CEL, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+Load global CTS reference options from NID to stack
+# GUI Debug: Building dc for netlist invalid. -- Time: 168ms
+--------------------------------------------------------------------------------
+       Power/Ground Pin Connection Checks
+--------------------------------------------------------------------------------
+
+Power/Ground Connection Summary:
+
+P/G net name                P/G pin count
+--------------------------------------------------------------------
+Other power nets:                 575
+Unconnected power pins:           0
+
+Other ground nets:                575
+Unconnected ground pins:          0
+--------------------------------------------------------------------
+Warning: Power connection/checking is skipped for 1150 power pins because the required power pin information cannot be found in logical libraries. (MV-510)
+
+--------------------------------------------------------------------------------
+       Supply Operating Voltage Checks
+--------------------------------------------------------------------------------
+No Errors/Warnings Found.
+
+Please review report above for warnings and errors.
+1
+icc_shell> read_sdc ../synthesis/iic.sdc
+ Info: hierarchy_separator was changed to /
+
+Reading SDC version 1.9...
+Warning: Constraint 'set_wire_load_mode' is not supported by icc_shell. (SDC-3)
+
+
+Summary of unsupported constraints:
+Information: Ignored 1 unsupported 'set_wire_load_mode' constraint. (SDC-4)
+ Info: hierarchy_separator was changed to /
+1
+icc_shell> check_timing
+Information: Updating graph... (UID-83)
+Information: Updating design information... (UID-85)
+
+Information: Checking generated_clocks...
+
+Information: Checking loops...
+
+Information: Checking no_input_delay...
+
+Information: Checking unconstrained_endpoints...
+
+Information: Checking pulse_clock_cell_type...
+
+Information: Checking no_driving_cell...
+
+Information: Checking partial_input_delay...
+Warning: there are 18 input ports that only have partial input delay specified. (TIM-212)
+--------------------
+IDAT[6]
+IDAT[5]
+IDAT[4]
+IDAT[3]
+IDAT[2]
+IDAT[1]
+IDAT[0]
+addr[2]
+addr[1]
+addr[0]
+IDAT[7]
+sda
+sw4
+sw3
+sw2
+sw1
+REG_WR
+rst_n
+1
+icc_shell> source ./scripts/opt_ctrl.tcl
+icc_shell> save_mw_cel -as iic_data_setup
+Information: Performing CEL netlist consistency check. (MWDC-118)
+Information: CEL consistency check PASSED. (MWDC-119)
+Information: Saved design named iic_data_setup. (UIG-5)
+1
+icc_shell> source scripts/pad_cell_cons.tcl
+Creating cell 'cornerll' in design 'iic_top'.
+Creating cell 'cornerlr' in design 'iic_top'.
+Creating cell 'cornerul' in design 'iic_top'.
+Creating cell 'cornerur' in design 'iic_top'.
+Warning: Library cell matching constraints can not be found. Library cell from the library cb13io320_tsmc_max is being used (UIED-89)
+Creating cell 'vss1left' in design 'iic_top'.
+Creating cell 'vss1right' in design 'iic_top'.
+Creating cell 'vss1top' in design 'iic_top'.
+Creating cell 'vss1bottom' in design 'iic_top'.
+Warning: Library cell matching constraints can not be found. Library cell from the library cb13io320_tsmc_max is being used (UIED-89)
+Creating cell 'vdd1left' in design 'iic_top'.
+Creating cell 'vdd1right' in design 'iic_top'.
+Creating cell 'vdd1top' in design 'iic_top'.
+Creating cell 'vdd1bottom' in design 'iic_top'.
+Warning: Library cell matching constraints can not be found. Library cell from the library cb13io320_tsmc_max is being used (UIED-89)
+Creating cell 'vss2left' in design 'iic_top'.
+Creating cell 'vss2right' in design 'iic_top'.
+Creating cell 'vss2top' in design 'iic_top'.
+Creating cell 'vss2bottom' in design 'iic_top'.
+Warning: Library cell matching constraints can not be found. Library cell from the library cb13io320_tsmc_max is being used (UIED-89)
+Creating cell 'vdd2left' in design 'iic_top'.
+Creating cell 'vdd2right' in design 'iic_top'.
+Creating cell 'vdd2top' in design 'iic_top'.
+Creating cell 'vdd2bottom' in design 'iic_top'.
+1
+icc_shell> create_floorplan -core_utilization 0.8 -left_io2core 20 -bottom_io2core 20 -right_io2core 20 -top_io2core 20
+51 pads are constrained in TDF table
+There are 47 IO pads 4 corner pads in total
+Start to create wire tracks ...
+GRC reference (361875,361875), dimensions (3690, 3690)
+Start to place pads/pins ...
+Information: The orientation of Library cell "pc3b03" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3o05" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3d01" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfrelr" is "S". (APLUI-043)
+Information: The orientation of Library cell "pv0i" is "E". (APLUI-043)
+Information: The orientation of Library cell "pvdi" is "E". (APLUI-043)
+Information: The orientation of Library cell "pv0a" is "E". (APLUI-043)
+Information: The orientation of Library cell "pvda" is "E". (APLUI-043)
+There are 0 pads constrained by min IO spacing.
+Top core spacing increased, pad limited.
+Right core spacing increased, pad limited.
+
+Running IO Placement Refinement...
+
+IO Placement Refinement Completed Successfully.
+
+Place pads/pins successfully
+Increase Left/Right to core distance by 0.05
+Pad Limited detected in Bottom/Top sides.
+Enlarge core width to 740.05 by 631.4
+Increase Bottom/Top to core distance by 0.05
+Pad Limited detected in Left/Right sides.
+Enlarge core height to 740.05 by 633.04
+Core aspect ratio adjusted to 0.997
+Core Utilization adjusted to 0.017
+Pad limited detected. Try fixed die size floor plan ...
+Start to create wire tracks ...
+GRC reference (361875,361875), dimensions (3690, 3690)
+Start to place pads/pins ...
+Information: The orientation of Library cell "pc3b03" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3o05" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3d01" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfrelr" is "S". (APLUI-043)
+Information: The orientation of Library cell "pv0i" is "E". (APLUI-043)
+Information: The orientation of Library cell "pvdi" is "E". (APLUI-043)
+Information: The orientation of Library cell "pv0a" is "E". (APLUI-043)
+Information: The orientation of Library cell "pvda" is "E". (APLUI-043)
+There are 0 pads constrained by min IO spacing.
+Top core spacing increased, pad limited.
+
+Running IO Placement Refinement...
+
+IO Placement Refinement Completed Successfully.
+
+Place pads/pins successfully
+Increase Bottom/Top to core distance by 0.05
+Pad Limited detected in Left/Right sides.
+Enlarge core height to 740.05 by 2.05
+Core aspect ratio adjusted to 0.997
+Core Utilization adjusted to 0.017
+Pad limited detected. Try fixed die size floor plan ...
+Start to create wire tracks ...
+GRC reference (361875,361875), dimensions (3690, 3690)
+Start to place pads/pins ...
+Information: The orientation of Library cell "pc3b03" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3o05" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3d01" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfrelr" is "S". (APLUI-043)
+Information: The orientation of Library cell "pv0i" is "E". (APLUI-043)
+Information: The orientation of Library cell "pvdi" is "E". (APLUI-043)
+Information: The orientation of Library cell "pv0a" is "E". (APLUI-043)
+Information: The orientation of Library cell "pvda" is "E". (APLUI-043)
+There are 0 pads constrained by min IO spacing.
+Top core spacing increased, pad limited.
+
+Running IO Placement Refinement...
+
+IO Placement Refinement Completed Successfully.
+
+Place pads/pins successfully
+Increase Bottom/Top to core distance by 0.05
+Pad Limited detected in Left/Right sides.
+Enlarge core height to 740.05 by 2.05
+Core aspect ratio adjusted to 0.997
+Core Utilization adjusted to 0.017
+Pad limited detected. Try fixed die size floor plan ...
+Start to create wire tracks ...
+GRC reference (361875,361875), dimensions (3690, 3690)
+Start to place pads/pins ...
+Information: The orientation of Library cell "pc3b03" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3o05" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3d01" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfrelr" is "S". (APLUI-043)
+Information: The orientation of Library cell "pv0i" is "E". (APLUI-043)
+Information: The orientation of Library cell "pvdi" is "E". (APLUI-043)
+Information: The orientation of Library cell "pv0a" is "E". (APLUI-043)
+Information: The orientation of Library cell "pvda" is "E". (APLUI-043)
+There are 0 pads constrained by min IO spacing.
+Top core spacing increased, pad limited.
+
+Running IO Placement Refinement...
+
+IO Placement Refinement Completed Successfully.
+
+Place pads/pins successfully
+Increase Bottom/Top to core distance by 0.05
+Pad Limited detected in Left/Right sides.
+Enlarge core height to 740.05 by 2.05
+Warning: Pin constraints not found for top block.  Default pin constraints are saved. (FPHSM-0010)
+Warning: Cell instance iic_instance/cnt_reg[1] is not completely placed inside top block iic_top (FPHSM-1800)
+Warning: Current cell: cell placement is incomplete and will be ignored (FPHSM-1829)
+Warning: Pad cells edges are now open for terminal placement (FPHSM-0019)
+Information: During terminal creation, some port-connected pins were detected as possible or likely candidates to be a PAD-type pin.  A tcl script, set_pad_attributes_on_cell_iic_top.tcl, has been created with a set_attribute command for each possible pin candidate. Some pins in this script may not actually be PAD-type pins.  Please edit this fileand correct any lines which are not correctly setting the value (true or false).  Then source this tcl script and then re-run the command which produced this message (place_fp_pins, initialize_floorplan, or initialize_rectilinear_block) again so that terminals are correctly processed.  The command has assumed that all candidate pins which are on padcells or bumpcells are to have terminals stacked onto the corresponding pins.  It has also assumed that all candidate pins which are on hard macros are to to have terminals created on the cell boundary.  If you are happy with these assumptions, you may forego the sourcing of the generated script and just accept the initial results .  If that does not give you satisfactory results, then use set_pin_physical_constraints to explicitly specify terminal locations. (FPHSM-1854)
+Number of terminals created: 31.
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Name      Original Ports
+iic_top               31
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Completed pin assignment.
+Elapsed =    0:00:00, CPU =    0:00:00
+Planner Summary:
+This floorplan is created by using tile name (unit).
+        Row Direction = HORIZONTAL
+        Control Parameter =  Width & Height
+        Core Utilization = 0.017
+        Number Of Rows = 200
+        Core Width = 740.05
+        Core Height = 740.05
+        Aspect Ratio = 0.997
+        Double Back ON
+        Flip First Row = NO
+        Start From First Row = NO
+Planner run through successfully.
+1
+icc_shell> source ./scripts/insert_pad_filler.tcl
+Hierarchical pad insertion...
+Information: The orientation of Library cell "pfeed10000" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed05000" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed02000" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed01000" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00500" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00200" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00100" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00050" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00010" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00005" is "E". (APLUI-043)
+.... first pad filler name is pfiller0
+WARNING : Cannot find filler cells for gap (405565 0) (435571 0)
+WARNING : Cannot find filler cells for gap (495571 0) (525577 0)
+WARNING : Cannot find filler cells for gap (585577 0) (615583 0)
+WARNING : Cannot find filler cells for gap (675583 0) (705589 0)
+WARNING : Cannot find filler cells for gap (765589 0) (795595 0)
+WARNING : Cannot find filler cells for gap (855595 0) (885601 0)
+WARNING : Cannot find filler cells for gap (945601 0) (975607 0)
+WARNING : Cannot find filler cells for gap (1035607 0) (1065615 0)
+WARNING : Cannot find filler cells for gap (405565 1471130) (405569 1471130)
+WARNING : Cannot find filler cells for gap (465569 1471130) (465573 1471130)
+WARNING : Cannot find filler cells for gap (525573 1471130) (525577 1471130)
+WARNING : Cannot find filler cells for gap (585577 1471130) (585581 1471130)
+WARNING : Cannot find filler cells for gap (645581 1471130) (645585 1471130)
+WARNING : Cannot find filler cells for gap (705585 1471130) (705589 1471130)
+WARNING : Cannot find filler cells for gap (765589 1471130) (765593 1471130)
+WARNING : Cannot find filler cells for gap (825593 1471130) (825597 1471130)
+WARNING : Cannot find filler cells for gap (885597 1471130) (885601 1471130)
+WARNING : Cannot find filler cells for gap (945601 1471130) (945605 1471130)
+WARNING : Cannot find filler cells for gap (1005605 1471130) (1005609 1471130)
+WARNING : Cannot find filler cells for gap (1065609 1471130) (1065615 1471130)
+WARNING : Cannot find filler cells for gap (1471180 405565) (1471180 411019)
+WARNING : Cannot find filler cells for gap (1471180 471019) (1471180 476473)
+WARNING : Cannot find filler cells for gap (1471180 536473) (1471180 541927)
+WARNING : Cannot find filler cells for gap (1471180 601927) (1471180 607381)
+WARNING : Cannot find filler cells for gap (1471180 667381) (1471180 672835)
+WARNING : Cannot find filler cells for gap (1471180 732835) (1471180 738289)
+WARNING : Cannot find filler cells for gap (1471180 798289) (1471180 803743)
+WARNING : Cannot find filler cells for gap (1471180 863743) (1471180 869197)
+WARNING : Cannot find filler cells for gap (1471180 929197) (1471180 934651)
+WARNING : Cannot find filler cells for gap (1471180 994651) (1471180 1000105)
+.... last pad filler name is pfiller77
+.... total of 78 pad filler inserted
+icc_shell> source scripts/connect_pg.tcl
+Information: connected 20 power ports and 20 ground ports
+Information: connected 20 power ports and 20 ground ports
+Information: connected 20 power ports and 20 ground ports
+reconnected total 0 tie highs and 0 tie lows
+1
+icc_shell> create_pad_rings
+Using [4 x 4] Fat Wire Table for METAL
+Using [4 x 4] Fat Wire Table for METAL2
+Using [4 x 4] Fat Wire Table for METAL3
+Using [4 x 4] Fat Wire Table for METAL4
+Using [3 x 3] Fat Wire Table for METAL5
+Using [3 x 3] Fat Wire Table for METAL6
+482 cells out of bound
+129 pad-cells out of bound
+Number of boundaries processed:
+ [1]  
+ [2]  
+ [3]  
+ [4]  
+ [done] 
+
+[Prerouter] CPU = 0:00:00, Elapsed = 0:00:00
+        Peak Memory =      245M Data =        0M
+1
+icc_shell> create_floorplan -core_utilization 0.8 -left_io2core 30 -bottom_io2core 30 -right_io2core 30 -top_io2core 30
+51 pins are constrained in TDF table
+There are 31 pins in total
+51 pads are constrained in TDF table
+There are 125 IO pads 4 corner pads in total
+Start to create wire tracks ...
+GRC reference (371875,371875), dimensions (3690, 3690)
+Start to place pads/pins ...
+Info: all the IO pins are purged, since both pad and pin exist.
+Information: The orientation of Library cell "pc3b03" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3o05" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3d01" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfrelr" is "S". (APLUI-043)
+Information: The orientation of Library cell "pv0i" is "E". (APLUI-043)
+Information: The orientation of Library cell "pvdi" is "E". (APLUI-043)
+Information: The orientation of Library cell "pv0a" is "E". (APLUI-043)
+Information: The orientation of Library cell "pvda" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed10000" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00005" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed05000" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00200" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00050" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00010" is "E". (APLUI-043)
+There are 0 pads constrained by min IO spacing.
+Top core spacing increased, pad limited.
+Right core spacing increased, pad limited.
+
+Running IO Placement Refinement...
+
+IO Placement Refinement Completed Successfully.
+
+Place pads/pins successfully
+Increase Left/Right to core distance by 0.095
+Pad Limited detected in Bottom/Top sides.
+Enlarge core width to 781.46 by 672.81
+Increase Bottom/Top to core distance by 0.06
+Pad Limited detected in Left/Right sides.
+Enlarge core height to 786.38 by 679.37
+Core aspect ratio adjusted to 1.006
+Core Utilization adjusted to 0.015
+Pad limited detected. Try fixed die size floor plan ...
+Start to create wire tracks ...
+GRC reference (371875,371875), dimensions (3690, 3690)
+Start to place pads/pins ...
+Information: The orientation of Library cell "pc3b03" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3o05" is "E". (APLUI-043)
+Information: The orientation of Library cell "pc3d01" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfrelr" is "S". (APLUI-043)
+Information: The orientation of Library cell "pv0i" is "E". (APLUI-043)
+Information: The orientation of Library cell "pvdi" is "E". (APLUI-043)
+Information: The orientation of Library cell "pv0a" is "E". (APLUI-043)
+Information: The orientation of Library cell "pvda" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed10000" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00005" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed05000" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00200" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00050" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00010" is "E". (APLUI-043)
+There are 0 pads constrained by min IO spacing.
+Top core spacing increased, pad limited.
+
+Running IO Placement Refinement...
+
+IO Placement Refinement Completed Successfully.
+
+Place pads/pins successfully
+Increase Bottom/Top to core distance by 0.06
+Warning: Cell instance iic_instance/cnt_reg[1] is not completely placed inside top block iic_top (FPHSM-1800)
+Warning: Current cell: cell placement is incomplete and will be ignored (FPHSM-1829)
+Warning: Pad cells edges are now open for terminal placement (FPHSM-0019)
+Information: During terminal creation, some port-connected pins were detected as possible or likely candidates to be a PAD-type pin.  A tcl script, set_pad_attributes_on_cell_iic_top.tcl, has been created with a set_attribute command for each possible pin candidate. Some pins in this script may not actually be PAD-type pins.  Please edit this fileand correct any lines which are not correctly setting the value (true or false).  Then source this tcl script and then re-run the command which produced this message (place_fp_pins, initialize_floorplan, or initialize_rectilinear_block) again so that terminals are correctly processed.  The command has assumed that all candidate pins which are on padcells or bumpcells are to have terminals stacked onto the corresponding pins.  It has also assumed that all candidate pins which are on hard macros are to to have terminals created on the cell boundary.  If you are happy with these assumptions, you may forego the sourcing of the generated script and just accept the initial results .  If that does not give you satisfactory results, then use set_pin_physical_constraints to explicitly specify terminal locations. (FPHSM-1854)
+Number of terminals created: 31.
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Name      Original Ports
+iic_top               31
+=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+Completed pin assignment.
+Elapsed =    0:00:00, CPU =    0:00:00
+Planner Summary:
+This floorplan is created by using tile name (unit).
+        Row Direction = HORIZONTAL
+        Control Parameter =  Width & Height
+        Core Utilization = 0.015
+        Number Of Rows = 213
+        Core Width = 781.46
+        Core Height = 785.97
+        Aspect Ratio = 1.006
+        Double Back ON
+        Flip First Row = NO
+        Start From First Row = NO
+Planner run through successfully.
+1
+icc_shell> source ./scripts/insert_pad_filler.tcl
+Hierarchical pad insertion...
+Information: The orientation of Library cell "pfeed10000" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed05000" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed02000" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed01000" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00500" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00200" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00100" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00050" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00010" is "E". (APLUI-043)
+Information: The orientation of Library cell "pfeed00005" is "E". (APLUI-043)
+.... first pad filler name is pfiller78
+WARNING : Cannot find filler cells for gap (405565 0) (413254 0)
+WARNING : Cannot find filler cells for gap (473254 0) (480943 0)
+WARNING : Cannot find filler cells for gap (540943 0) (548632 0)
+WARNING : Cannot find filler cells for gap (608632 0) (616321 0)
+WARNING : Cannot find filler cells for gap (676321 0) (684010 0)
+WARNING : Cannot find filler cells for gap (744010 0) (751699 0)
+WARNING : Cannot find filler cells for gap (811699 0) (819388 0)
+WARNING : Cannot find filler cells for gap (879388 0) (887077 0)
+WARNING : Cannot find filler cells for gap (947077 0) (954766 0)
+WARNING : Cannot find filler cells for gap (954816 0) (962505 0)
+WARNING : Cannot find filler cells for gap (962555 0) (970244 0)
+WARNING : Cannot find filler cells for gap (970294 0) (977983 0)
+WARNING : Cannot find filler cells for gap (978183 0) (985872 0)
+WARNING : Cannot find filler cells for gap (986072 0) (993761 0)
+WARNING : Cannot find filler cells for gap (993961 0) (1001650 0)
+WARNING : Cannot find filler cells for gap (1001850 0) (1009539 0)
+WARNING : Cannot find filler cells for gap (1009739 0) (1017428 0)
+WARNING : Cannot find filler cells for gap (1022428 0) (1030117 0)
+WARNING : Cannot find filler cells for gap (1035117 0) (1042806 0)
+WARNING : Cannot find filler cells for gap (1047806 0) (1055495 0)
+WARNING : Cannot find filler cells for gap (1055500 0) (1063189 0)
+WARNING : Cannot find filler cells for gap (1063194 0) (1070883 0)
+WARNING : Cannot find filler cells for gap (1080883 0) (1088572 0)
+WARNING : Cannot find filler cells for gap (1098572 0) (1106261 0)
+WARNING : Cannot find filler cells for gap (1116261 0) (1123950 0)
+WARNING : Cannot find filler cells for gap (1133950 0) (1141639 0)
+WARNING : Cannot find filler cells for gap (1151639 0) (1159328 0)
+WARNING : Cannot find filler cells for gap (1169328 0) (1177025 0)
+WARNING : Cannot find filler cells for gap (405565 1537450) (405568 1537450)
+WARNING : Cannot find filler cells for gap (465568 1537450) (465571 1537450)
+WARNING : Cannot find filler cells for gap (525571 1537450) (525574 1537450)
+WARNING : Cannot find filler cells for gap (585574 1537450) (585577 1537450)
+WARNING : Cannot find filler cells for gap (645577 1537450) (645580 1537450)
+WARNING : Cannot find filler cells for gap (705580 1537450) (705583 1537450)
+WARNING : Cannot find filler cells for gap (765583 1537450) (765586 1537450)
+WARNING : Cannot find filler cells for gap (825586 1537450) (825589 1537450)
+WARNING : Cannot find filler cells for gap (885589 1537450) (885592 1537450)
+WARNING : Cannot find filler cells for gap (945592 1537450) (945595 1537450)
+WARNING : Cannot find filler cells for gap (1005595 1537450) (1005598 1537450)
+WARNING : Cannot find filler cells for gap (1065598 1537450) (1065601 1537450)
+WARNING : Cannot find filler cells for gap (1125601 1537450) (1125604 1537450)
+WARNING : Cannot find filler cells for gap (1125654 1537450) (1125657 1537450)
+WARNING : Cannot find filler cells for gap (1125707 1537450) (1125710 1537450)
+WARNING : Cannot find filler cells for gap (1125760 1537450) (1125763 1537450)
+WARNING : Cannot find filler cells for gap (1125963 1537450) (1125966 1537450)
+WARNING : Cannot find filler cells for gap (1126166 1537450) (1126169 1537450)
+WARNING : Cannot find filler cells for gap (1126369 1537450) (1126372 1537450)
+WARNING : Cannot find filler cells for gap (1126572 1537450) (1126575 1537450)
+WARNING : Cannot find filler cells for gap (1126775 1537450) (1126778 1537450)
+WARNING : Cannot find filler cells for gap (1126978 1537450) (1126981 1537450)
+WARNING : Cannot find filler cells for gap (1131981 1537450) (1131984 1537450)
+WARNING : Cannot find filler cells for gap (1136984 1537450) (1136987 1537450)
+WARNING : Cannot find filler cells for gap (1136992 1537450) (1136995 1537450)
+WARNING : Cannot find filler cells for gap (1137000 1537450) (1137003 1537450)
+WARNING : Cannot find filler cells for gap (1137008 1537450) (1137011 1537450)
+WARNING : Cannot find filler cells for gap (1147011 1537450) (1147014 1537450)
+WARNING : Cannot find filler cells for gap (1157014 1537450) (1157017 1537450)
+WARNING : Cannot find filler cells for gap (1167017 1537450) (1167020 1537450)
+.... last pad filler name is pfiller603
+.... total of 526 pad filler inserted
+icc_shell> source scripts/connect_pg.tcl
+Information: connected 0 power ports and 0 ground ports
+Information: connected 0 power ports and 0 ground ports
+Information: connected 0 power ports and 0 ground ports
+reconnected total 0 tie highs and 0 tie lows
+1
+icc_shell> create_pad_rings
+Using [4 x 4] Fat Wire Table for METAL
+Using [4 x 4] Fat Wire Table for METAL2
+Using [4 x 4] Fat Wire Table for METAL3
+Using [4 x 4] Fat Wire Table for METAL4
+Using [3 x 3] Fat Wire Table for METAL5
+Using [3 x 3] Fat Wire Table for METAL6
+482 cells out of bound
+655 pad-cells out of bound
+Number of boundaries processed:
+ [1]  
+WARNING:  Wire dropped due to DRC problems
+((465.565, 1275.685) (465.570, 1284.185)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((465.565, 1265.185) (465.570, 1273.685)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((465.565, 1297.630) (465.570, 1305.710)) (Net: VDD)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((465.565, 1304.110) (465.570, 1310.110)) (Net: VDD)(wire on layer: METAL2 [18])
+WARNING:  Wire dropped due to DRC problems
+((465.565, 1318.665) (465.570, 1326.095)) (Net: VDDQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((465.565, 1334.175) (465.570, 1342.955)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((465.565, 1328.175) (465.570, 1332.175)) (Net: VDDQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((465.565, 1344.960) (465.570, 1353.180)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((465.565, 1355.090) (465.570, 1360.290)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((465.565, 1364.185) (465.570, 1372.265)) (Net: VSS)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((465.565, 1233.485) (465.570, 1241.985)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((465.565, 1254.685) (465.570, 1263.185)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((465.565, 1222.985) (465.570, 1231.485)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((465.565, 1243.985) (465.570, 1252.485)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((585.570, 1304.110) (585.575, 1310.110)) (Net: VDD)(wire on layer: METAL2 [18])
+WARNING:  Wire dropped due to DRC problems
+((585.570, 1297.630) (585.575, 1305.710)) (Net: VDD)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((585.570, 1318.665) (585.575, 1326.095)) (Net: VDDQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((585.570, 1328.175) (585.575, 1332.175)) (Net: VDDQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((585.570, 1334.175) (585.575, 1342.955)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((585.570, 1344.960) (585.575, 1353.180)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((585.570, 1355.090) (585.575, 1360.290)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((585.570, 1364.185) (585.575, 1372.265)) (Net: VSS)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((585.570, 1222.985) (585.575, 1231.485)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((585.570, 1233.485) (585.575, 1241.985)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((585.570, 1243.985) (585.575, 1252.485)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((585.570, 1254.685) (585.575, 1263.185)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((585.570, 1265.185) (585.575, 1273.685)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((585.570, 1275.685) (585.575, 1284.185)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((645.575, 1297.630) (645.580, 1305.710)) (Net: VDD)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((645.575, 1328.175) (645.580, 1332.175)) (Net: VDDQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((645.575, 1344.960) (645.580, 1353.180)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((645.575, 1355.090) (645.580, 1360.290)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((645.575, 1304.110) (645.580, 1310.110)) (Net: VDD)(wire on layer: METAL2 [18])
+WARNING:  Wire dropped due to DRC problems
+((645.575, 1364.185) (645.580, 1372.265)) (Net: VSS)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((645.575, 1318.665) (645.580, 1326.095)) (Net: VDDQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((645.575, 1334.175) (645.580, 1342.955)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((645.575, 1222.985) (645.580, 1231.485)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((645.575, 1233.485) (645.580, 1241.985)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((645.575, 1243.985) (645.580, 1252.485)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((645.575, 1254.685) (645.580, 1263.185)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((645.575, 1265.185) (645.580, 1273.685)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((645.575, 1275.685) (645.580, 1284.185)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((765.580, 1304.110) (765.585, 1310.110)) (Net: VDD)(wire on layer: METAL2 [18])
+WARNING:  Wire dropped due to DRC problems
+((765.580, 1297.630) (765.585, 1305.710)) (Net: VDD)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((765.580, 1318.665) (765.585, 1326.095)) (Net: VDDQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((765.580, 1328.175) (765.585, 1332.175)) (Net: VDDQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((765.580, 1334.175) (765.585, 1342.955)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((765.580, 1344.960) (765.585, 1353.180)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((765.580, 1355.090) (765.585, 1360.290)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((765.580, 1233.485) (765.585, 1241.985)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((765.580, 1222.985) (765.585, 1231.485)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((765.580, 1243.985) (765.585, 1252.485)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((765.580, 1364.185) (765.585, 1372.265)) (Net: VSS)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((765.580, 1265.185) (765.585, 1273.685)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((765.580, 1275.685) (765.585, 1284.185)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((765.580, 1254.685) (765.585, 1263.185)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((885.585, 1328.175) (885.590, 1332.175)) (Net: VDDQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((885.585, 1233.485) (885.590, 1241.985)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((885.585, 1265.185) (885.590, 1273.685)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((885.585, 1304.110) (885.590, 1310.110)) (Net: VDD)(wire on layer: METAL2 [18])
+WARNING:  Wire dropped due to DRC problems
+((885.585, 1355.090) (885.590, 1360.290)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((885.585, 1364.185) (885.590, 1372.265)) (Net: VSS)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((885.585, 1243.985) (885.590, 1252.485)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((885.585, 1275.685) (885.590, 1284.185)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((885.585, 1297.630) (885.590, 1305.710)) (Net: VDD)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((885.585, 1318.665) (885.590, 1326.095)) (Net: VDDQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((885.585, 1334.175) (885.590, 1342.955)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((885.585, 1344.960) (885.590, 1353.180)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((885.585, 1222.985) (885.590, 1231.485)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((885.585, 1254.685) (885.590, 1263.185)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((945.590, 1265.185) (945.595, 1273.685)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((945.590, 1254.685) (945.595, 1263.185)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((945.590, 1243.985) (945.595, 1252.485)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((945.590, 1233.485) (945.595, 1241.985)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((945.590, 1222.985) (945.595, 1231.485)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((945.590, 1364.185) (945.595, 1372.265)) (Net: VSS)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((945.590, 1355.090) (945.595, 1360.290)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((945.590, 1344.960) (945.595, 1353.180)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((945.590, 1334.175) (945.595, 1342.955)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((945.590, 1328.175) (945.595, 1332.175)) (Net: VDDQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((945.590, 1318.665) (945.595, 1326.095)) (Net: VDDQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((945.590, 1297.630) (945.595, 1305.710)) (Net: VDD)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((945.590, 1304.110) (945.595, 1310.110)) (Net: VDD)(wire on layer: METAL2 [18])
+WARNING:  Wire dropped due to DRC problems
+((945.590, 1275.685) (945.595, 1284.185)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((1065.595, 1304.110) (1065.600, 1310.110)) (Net: VDD)(wire on layer: METAL2 [18])
+WARNING:  Wire dropped due to DRC problems
+((1065.595, 1297.630) (1065.600, 1305.710)) (Net: VDD)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((1065.595, 1318.665) (1065.600, 1326.095)) (Net: VDDQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((1065.595, 1334.175) (1065.600, 1342.955)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((1065.595, 1355.090) (1065.600, 1360.290)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((1065.595, 1265.185) (1065.600, 1273.685)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((1065.595, 1254.685) (1065.600, 1263.185)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((1065.595, 1364.185) (1065.600, 1372.265)) (Net: VSS)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((1065.595, 1328.175) (1065.600, 1332.175)) (Net: VDDQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((1065.595, 1344.960) (1065.600, 1353.180)) (Net: VSSQ)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((1065.595, 1233.485) (1065.600, 1241.985)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((1065.595, 1243.985) (1065.600, 1252.485)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((1065.595, 1275.685) (1065.600, 1284.185)) (Net: VDDO)(wire on layer: METAL4 [26])
+WARNING:  Wire dropped due to DRC problems
+((1065.595, 1222.985) (1065.600, 1231.485)) (Net: VDDO)(wire on layer: METAL4 [26])
+ [2]  
+WARNING:  Wire dropped due to DRC problems
+((1218.125, 405.565) (1226.625, 406.860)) (Net: VDDO)(wire on layer: METAL4 [26])
+ [3]  
+ [4]  
+ [done] 
+
+[Prerouter] CPU = 0:00:00, Elapsed = 0:00:00
+        Peak Memory =      245M Data =        1M
+1
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -start HIGHLIGHT_TOOL
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {979.620 175.665} -scale 0.2201
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {987.765 175.445} -scale 0.2201
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {996.570 174.565} -scale 0.2201
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1005.380 174.345} -scale 0.2201
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1008.240 174.785} -scale 0.2201
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -drag {{1054.485 1062.680} {1379.330 797.810}} -scale 4.9976
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -drag {{1014.505 1062.680} {1214.410 717.850}} -scale 4.9976
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -drag {{1190.725 1025.055} {1216.135 1012.975}} -scale 0.1389
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1196.190 1019.330} -scale 0.0068
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1195.975 1018.990} -scale 0.0068
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1197.285 1018.875} -scale 0.0068
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1195.500 1018.830} -scale 0.0068
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1195.500 1018.830} -scale 0.0068
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1196.230 1018.865} -scale 0.0068
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1197.575 1018.910} -scale 0.0068
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1200.905 1019.075} -scale 0.0068
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1201.380 1019.085} -scale 0.0068
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1205.810 1018.960} -scale 0.0068
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1238.695 1018.960} -scale 0.0068
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1240.065 1018.960} -scale 0.0068
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1242.805 1018.960} -scale 0.0068
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1274.740 1019.095} -scale 0.0068
+icc_shell> gui_mouse_tool -window [gui_get_current_window -types Layout -mru] -add_point {1281.335 1019.075} -scale 0.0068
+icc_shell> close_mw_lib
+1
+icc_shell> open_mw_lib iic.mw
+{iic.mw}
+icc_shell> start_gui
+icc_shell> close_mw_lib
+icc_shell> open_mw_lib /home/stu23/sorin/ic_project_lab/layout/iic.mw/
+{iic.mw}
+icc_shell> set_tlu_plus_files -max_tluplus /home/stu23/sorin/ic_project_lab/ref/tlup/cb13_6m_max.tluplus -min_tluplus /home/stu23/sorin/ic_project_lab/ref/tlup/cb13_6m_min.tluplus -tech2itf_map  /home/stu23/sorin/ic_project_lab/ref/tlup/cb13_6m.map
+1
+icc_shell> import_designs -format verilog -top iic_top -cel iic_top {/home/stu23/sorin/ic_project_lab/synthesis/iic_netlist.v}Type of creating bus for undefined cells : 0
+
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 1 *****
+Warning: Lineno 713, change net type from TRI to Wire. (MWNL-117)
+Warning: Lineno 714, change net type from TRI to Wire. (MWNL-117)
+
+*****  Pass 1 Complete *****
+Elapsed =    0:00:00, CPU =    0:00:00
+
+*****  Verilog HDL translation! *****
+
+*****    Start Pass 2 *****
+Warning: Lineno 713, change net type from TRI to Wire. (MWNL-117)
+Warning: Lineno 714, change net type from TRI to Wire. (MWNL-117)
+
+*****  Pass 2 Complete *****
+
+*****   Verilog HDL translation completed! *****
+Elapsed =    0:00:00, CPU =    0:00:00
+Hierarchy Preservation is turned ON
+The quick-attach skip-search mode has been turned on.
+  Start axu naming escaping style change ...
+  End axu naming escaping style change, status is 1
+Checking single pin net for cell 'iic_top.CEL' now...
+Total number of cell instances: 513
+Total number of nets: 553
+Total number of ports: 31 (include 0 PG ports)
+Total number of hierarchical cell instances: 3
+
+The quick-attach skip-search mode has been turned off.
+INFO:  total find 0 pg nets connected with tie net.
+Elapsed =    0:00:00, CPU =    0:00:00
+Preparing data for query................... 
+Information: Read verilog completed successfully.
+1
+icc_shell> source ./scripts/connect_pg.tcl
+Information: connected 513 power ports and 513 ground ports
+Information: connected 31 power ports and 31 ground ports
+Information: connected 31 power ports and 31 ground ports
+reconnected total 0 tie highs and 0 tie lows
+1
+icc_shell> read_sdc ../synthesis/iic.sdc
+Information: linking reference library : /home/stu23/sorin/ic_project_lab/ref/mw_lib/io. (PSYN-878)
+Information: linking reference library : /home/stu23/sorin/ic_project_lab/ref/mw_lib/sc. (PSYN-878)
+Warning: Could not find a valid driver for the hierarchical Ground net 'VSS'. (MWDC-285)
+Warning: Could not find a valid driver for the hierarchical Power net 'VDD'. (MWDC-285)
+
+  Linking design 'iic_top'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (3 designs)               iic_top.CEL, etc
+  cb13fs120_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/sc_max.db
+  cb13io320_tsmc_max (library) /home/stu23/sorin/ic_project_lab/ref/db/io_max.db
+  cb13special_max (library)   /home/stu23/sorin/ic_project_lab/ref/db/special_max.db
+  ram16x128_max (library)     /home/stu23/sorin/ic_project_lab/ref/db/ram16x128_max.db
+  ram4x32_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram4x32_max.db
+  ram8x64_max (library)       /home/stu23/sorin/ic_project_lab/ref/db/ram8x64_max.db
+  ram32x64_max (library)      /home/stu23/sorin/ic_project_lab/ref/db/ram32x64_max.db
+
+Load global CTS reference options from NID to stack
+# GUI Debug: Building dc from empty. -- Time: 169ms
+ Info: hierarchy_separator was changed to /
+
+Reading SDC version 1.9...
+Warning: Constraint 'set_wire_load_mode' is not supported by icc_shell. (SDC-3)
+
+
+Summary of unsupported constraints:
+Information: Ignored 1 unsupported 'set_wire_load_mode' constraint. (SDC-4)
+ Info: hierarchy_separator was changed to /
+1
+icc_shell> report_timing
+Information: Updating graph... (UID-83)
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : iic_top
+Version: G-2012.06-ICC-SP5
+Date   : Sun Nov 22 17:58:28 2015
+****************************************
+
+Operating Conditions: cb13fs120_tsmc_max   Library: cb13fs120_tsmc_max
+
+  Startpoint: sda (input port clocked by clk)
+  Endpoint: sda (output port clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     2.00       2.00 f
+  sda (inout)                             36.35      38.35 f
+  sda_pad/PAD (pc3b03)                     0.05      38.40 f
+  sda_pad/CIN (pc3b03)                    -1.38      37.02 f
+  U9/ZN (invbdk)                           0.03      37.05 r
+  net_sda_tri/ZN (invtd1)                  0.11      37.16 f
+  U8/ZN (inv0d2)                           0.05      37.21 r
+  net_sda_o_tri/ZN (invtd1)                0.08      37.30 f
+  U6/Z (bufbdf)                            0.27      37.57 f
+  sda_pad/PAD (pc3b03)                     2.01      39.58 f
+  sda (inout)                              0.05      39.63 f
+  data arrival time                                  39.63
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  clock uncertainty                       -0.35       9.65
+  output external delay                   -2.00       7.65
+  data required time                                  7.65
+  -----------------------------------------------------------
+  data required time                                  7.65
+  data arrival time                                 -39.63
+  -----------------------------------------------------------
+  slack (VIOLATED)                                  -31.98
+
+
+1
+icc_shell> 
+Exit IC Compiler!

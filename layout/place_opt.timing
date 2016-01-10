@@ -1,0 +1,157 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : iic_top
+Version: G-2012.06-ICC-SP5
+Date   : Sun Nov 22 18:38:50 2015
+****************************************
+
+ * Some/all delay information is back-annotated.
+
+Operating Conditions: cb13fs120_tsmc_max   Library: cb13fs120_tsmc_max
+	Parasitic source    : LPE
+	Parasitic mode      : RealRVirtualC
+	Extraction mode     : MIN_MAX
+	Extraction derating : -40/25/125
+
+  Startpoint: sda (input port clocked by clk)
+  Endpoint: sda (output port clocked by clk)
+  Path Group: COMBO
+  Path Type: max
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  input external delay                     2.00       2.00 f
+  sda (inout)                             36.35      38.35 f
+  sda_pad/PAD (pc3b03)                     0.04 *    38.39 f
+  sda_pad/CIN (pc3b03)                    -1.18      37.21 f
+  U8/ZN (inv0d1)                           0.07 *    37.28 r
+  net_sda_tri/ZN (invtd1)                  0.11 *    37.40 f
+  U7/ZN (inv0d1)                           0.05 *    37.45 r
+  net_sda_o_tri/ZN (invtd4)                0.70 *    38.15 f
+  sda_pad/PAD (pc3b03)                     2.14 *    40.29 f
+  sda (inout)                              0.01 *    40.30 f
+  data arrival time                                  40.30
+
+  clock clk (rise edge)                  100.00     100.00
+  clock network delay (ideal)              0.00     100.00
+  output external delay                   -2.00      98.00
+  data required time                                 98.00
+  -----------------------------------------------------------
+  data required time                                 98.00
+  data arrival time                                 -40.30
+  -----------------------------------------------------------
+  slack (MET)                                        57.70
+
+
+  Startpoint: sda (input port clocked by clk)
+  Endpoint: iic_instance/read_data_reg[6]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: INPUTS
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  input external delay                                    2.00       2.00 f
+  sda (inout)                                            36.35      38.35 f
+  sda_pad/PAD (pc3b03)                                    0.04 *    38.39 f
+  sda_pad/CIN (pc3b03)                                   -1.18      37.21 f
+  U8/ZN (inv0d1)                                          0.07 *    37.28 r
+  net_sda_tri/ZN (invtd1)                                 0.11 *    37.40 f
+  iic_instance/sda (iic)                                  0.00      37.40 f
+  iic_instance/U35/Z (an02d1)                             0.14 *    37.54 f
+  iic_instance/U3/Z (an02d1)                              0.15 *    37.68 f
+  iic_instance/U142/Z (aor22d1)                           0.19 *    37.87 f
+  iic_instance/read_data_reg[6]/D (dfcrq1)                0.00 *    37.87 f
+  data arrival time                                                 37.87
+
+  clock clk (rise edge)                                 100.00     100.00
+  clock network delay (propagated)                        1.15     101.15
+  iic_instance/read_data_reg[6]/CP (dfcrq1)               0.00     101.15 r
+  library setup time                                     -0.04     101.11
+  data required time                                               101.11
+  --------------------------------------------------------------------------
+  data required time                                               101.11
+  data arrival time                                                -37.87
+  --------------------------------------------------------------------------
+  slack (MET)                                                       63.24
+
+
+  Startpoint: iic_instance/sda_link_reg
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: sda (output port clocked by clk)
+  Path Group: OUTPUTS
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        1.21       1.21
+  iic_instance/sda_link_reg/CP (dfcrb1)                   0.00       1.21 r
+  iic_instance/sda_link_reg/QN (dfcrb1)                   0.43       1.64 f
+  iic_instance/U4/ZN (invbd7)                             0.75 *     2.39 r
+  iic_instance/sda_link (iic)                             0.00       2.39 r
+  sda_pad/PAD (pc3b03)                                    3.72 *     6.11 r
+  sda (inout)                                             0.01 *     6.12 r
+  data arrival time                                                  6.12
+
+  clock clk (rise edge)                                 100.00     100.00
+  clock network delay (ideal)                             0.00     100.00
+  output external delay                                  -2.00      98.00
+  data required time                                                98.00
+  --------------------------------------------------------------------------
+  data required time                                                98.00
+  data arrival time                                                 -6.12
+  --------------------------------------------------------------------------
+  slack (MET)                                                       91.88
+
+
+  Startpoint: iic_instance/pagecnt_reg[2]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: iic_instance/num_reg[3]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (propagated)                        1.21       1.21
+  iic_instance/pagecnt_reg[2]/CP (dfcrq1)                 0.00       1.21 r
+  iic_instance/pagecnt_reg[2]/Q (dfcrq1)                  0.44       1.64 r
+  iic_instance/U6/ZN (inv0d1)                             0.25 *     1.89 f
+  iic_instance/U251/Z (aor211d1)                          0.31 *     2.20 f
+  iic_instance/U88/ZN (inv0d1)                            0.05 *     2.25 r
+  iic_instance/U250/ZN (oan211d1)                         0.17 *     2.42 f
+  iic_instance/U249/ZN (nr04d0)                           0.20 *     2.62 r
+  iic_instance/U247/ZN (nr02d0)                           0.25 *     2.87 f
+  iic_instance/U246/ZN (nr02d0)                           0.16 *     3.03 r
+  iic_instance/U245/ZN (nr02d0)                           0.15 *     3.18 f
+  iic_instance/U244/Z (aor21d1)                           0.20 *     3.38 f
+  iic_instance/U166/ZN (nr04d0)                           0.26 *     3.64 r
+  iic_instance/U165/ZN (oan211d1)                         0.33 *     3.97 f
+  iic_instance/U164/ZN (aoi21d1)                          0.24 *     4.21 r
+  iic_instance/U158/ZN (aon211d1)                         0.24 *     4.45 f
+  iic_instance/num_reg[3]/D (dfcrb1)                      0.00 *     4.45 f
+  data arrival time                                                  4.45
+
+  clock clk (rise edge)                                 100.00     100.00
+  clock network delay (propagated)                        1.14     101.14
+  iic_instance/num_reg[3]/CP (dfcrb1)                     0.00     101.14 r
+  library setup time                                     -0.04     101.10
+  data required time                                               101.10
+  --------------------------------------------------------------------------
+  data required time                                               101.10
+  data arrival time                                                 -4.45
+  --------------------------------------------------------------------------
+  slack (MET)                                                       96.66
+
+
+1
